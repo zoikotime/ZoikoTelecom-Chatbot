@@ -1,0 +1,1385 @@
+﻿{
+  "fallback": "Hmm, I want to make sure I point you to the right place. Could you tell me a bit more about what you're looking for?\n\nOr, here are some common things people need help with:\n- Choosing a plan\n- Activating service\n- Switching carriers\n- Account questions\n- Technical support\n\nWhich one sounds closest?",
+  "default_suggestions": [
+    "Exploring plans",
+    "Bring your own phone",
+    "Switch carriers",
+    "Activation help"
+  ],
+  "intents": [
+    {
+      "id": "welcome",
+      "keywords": [
+        "hi",
+        "hello",
+        "hey",
+        "help",
+        "start",
+        "menu",
+        "what can you do",
+        "something else",
+        "get started",
+        "welcome",
+        "begin",
+        "home"
+      ],
+      "response": "Hey there! 👋 Welcome to GoLite Mobile. I'm here to help you get connected.\n\nWhat brings you by today?\n- 🔍 Exploring plans\n- 📱 Bringing your own phone\n- 🔄 Switching from another carrier\n- ❓ Something else\n\nJust type what's on your mind, and let's figure it out together!",
+      "suggestions": [
+        "Exploring plans",
+        "Bring your own phone",
+        "Switch carriers",
+        "Something else"
+      ]
+    },
+    {
+      "id": "exploring_plans",
+      "keywords": [
+        "exploring plans",
+        "looking at plans",
+        "what plans do you have",
+        "need a new plan",
+        "plans",
+        "plan",
+        "looking for a plan",
+        "show me plans",
+        "see plans",
+        "available plans"
+      ],
+      "response": "Great choice! Let's find you the perfect fit. Quick question - how do you usually use your phone?\n\nA) Mostly calls and texts, some browsing\nB) Streaming videos, social media, lots of data\nC) International calls or travel\nD) For my whole family/multiple lines\nE) Just need something basic and affordable\n\nNo wrong answer - just want to point you in the right direction!",
+      "suggestions": [
+        "Light usage",
+        "Heavy data",
+        "International",
+        "Family plans",
+        "Basic affordable"
+      ]
+    },
+    {
+      "id": "light_usage",
+      "keywords": [
+        "light usage",
+        "calls and texts",
+        "some browsing",
+        "light browsing",
+        "basic phone use",
+        "a"
+      ],
+      "response": "Perfect! Sounds like you'd love our prepaid plans - no contracts, pay as you go.\nYou can check them out here:\nhttps://golitemobile.com/prepaid-plans/\n\nWe also have a super affordable top-up option that's great for light users:\nhttps://golitemobile.com/top-up/\n\nWant me to walk you through what's included, or would you rather explore on your own?",
+      "suggestions": [
+        "Prepaid plans",
+        "Top-up plans",
+        "Plans overview",
+        "Basic affordable"
+      ]
+    },
+    {
+      "id": "heavy_data",
+      "keywords": [
+        "heavy data",
+        "streaming",
+        "heavy usage",
+        "social media",
+        "unlimited",
+        "lots of data",
+        "streaming enthusiast",
+        "hotspot",
+        "data rollover",
+        "b",
+        "stream"
+      ],
+      "response": "You sound like someone who needs unlimited everything! We've got plans built just for people who stream, scroll, and stay connected.\n\nCheck out our streaming enthusiast plans here:\nhttps://golitemobile.com/streaming-enthusiasts-plans/\n\nThese come with data rollover, hotspot, and free international calling. Want to know more about any specific features?",
+      "suggestions": [
+        "Streaming plans",
+        "Plans overview",
+        "International",
+        "Special offers"
+      ]
+    },
+    {
+      "id": "international",
+      "keywords": [
+        "international",
+        "travel",
+        "international calls",
+        "travel plans",
+        "calling overseas",
+        "abroad",
+        "c",
+        "overseas",
+        "international calling"
+      ],
+      "response": "Awesome! We've got you covered whether you're calling overseas or traveling.\n\nFor international calling:\nhttps://golitemobile.com/international-calls/\n\nFor travel plans:\nhttps://golitemobile.com/travel-plans/\n\nAre you looking to call internationally from the US, or need service while traveling abroad?",
+      "suggestions": [
+        "International calling",
+        "Travel plans",
+        "International roaming",
+        "Exploring plans"
+      ]
+    },
+    {
+      "id": "family_plans",
+      "keywords": [
+        "family",
+        "multiple lines",
+        "family plans",
+        "multi line",
+        "multi-line",
+        "share data",
+        "bundle lines",
+        "d",
+        "family plan",
+        "multiple phones"
+      ],
+      "response": "Smart! You'll save more when you bundle lines together.\n\nOur family plans let you mix and match prepaid or postpaid, share data, and get discounts on each additional line:\nhttps://golitemobile.com/shop-family-multi-line-plans/\n\nHow many lines are you thinking?",
+      "suggestions": [
+        "Family plans",
+        "Prepaid plans",
+        "Postpaid plans",
+        "Business plans"
+      ]
+    },
+    {
+      "id": "basic_affordable",
+      "keywords": [
+        "basic affordable",
+        "budget",
+        "cheap plan",
+        "most affordable",
+        "top up",
+        "budget friendly",
+        "Basic",
+        "affordable",
+        "e",
+        "affordable",
+        "cheapest"
+      ],
+      "response": "We hear you! Check out our top-up plan - it's our most budget-friendly option:\nhttps://golitemobile.com/top-up/\n\nOr browse all our prepaid plans here:\nhttps://golitemobile.com/prepaid-plans/\n\nAll come with 5G access and no hidden fees. Want help comparing?",
+      "suggestions": [
+        "Top-up plans",
+        "Prepaid plans",
+        "Plans overview",
+        "Special offers"
+      ]
+    },
+    {
+      "id": "byod",
+      "keywords": [
+        "bring my phone",
+        "bring your own phone",
+        "byod",
+        "use my current phone",
+        "phone compatibility",
+        "imei",
+        "check compatibility",
+        "unlocked phone",
+        "can i bring my phone",
+        "can i bring my mobile",
+        "device",
+        "phone",
+        "bring own device",
+        "my own phone"
+      ],
+      "response": "Absolutely! Most phones work with us - we support the same networks as Verizon, AT&T, and T-Mobile.\n\nHere's what to do:\n1. Check if your phone is compatible:\nhttps://golitemobile.com/byod/\n2. Make sure it's unlocked (not tied to another carrier)\n3. Grab a SIM card or eSIM from us\n\nWant to check your phone's compatibility right now? Just head to that link and enter your IMEI number (dial *#06# to find it).\n\nAlready know your phone works? I can help you pick a plan!",
+      "suggestions": [
+        "Check compatibility",
+        "Bring your own phone",
+        "Switch carriers",
+        "Activation help"
+      ]
+    },
+    {
+      "id": "byod_more_help",
+      "keywords": [
+        "need more help with byod",
+        "phone model",
+        "is my phone compatible",
+        "order a sim",
+        "order sim card"
+      ],
+      "response": "No worries! The compatibility checker on that page will tell you exactly what you need. If you're stuck, just drop your phone model here and I'll help figure it out.\n\nOnce you're ready, you can order a SIM here:\nhttps://golitemobile.com/prepaid-plans/\nor\nhttps://golitemobile.com/plans/postpaid-plan/",
+      "suggestions": [
+        "Prepaid plans",
+        "Postpaid plans",
+        "Activation help",
+        "Bring your own phone"
+      ]
+    },
+    {
+      "id": "switch_carriers",
+      "keywords": [
+        "switch carriers",
+        "switch from another carrier",
+        "leaving carrier",
+        "keep my number",
+        "port my number",
+        "switch and save",
+        "want to switch",
+        "leaving",
+        "switching"
+      ],
+      "response": "Hey, welcome to the GoLite family! Making the switch is easier than you think, and yes - you can totally keep your number.\n\nHere's the quick version:\n✅ Your number stays active with your old carrier until we complete the transfer\n✅ No downtime - you won't lose service\n✅ We'll walk you through everything\n\nStart here to check if your number is eligible:\nhttps://golitemobile.com/switch-and-save/\n\nHave you already:\n- Confirmed your phone is unlocked?\n- Grabbed your account number and PIN from your current carrier?\n\nIf not, no stress - I can help you figure out what you need!",
+      "suggestions": [
+        "Keep my number",
+        "Bring your own phone",
+        "Activation help",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "keep_number",
+      "keywords": [
+        "porting",
+        "how long does it take",
+        "keep my number",
+        "can i keep my number",
+        "number transfer",
+        "port my number",
+        "number eligible",
+        "how long switch",
+        "will i lose service",
+        "will i my service"
+      ],
+      "response": "Common questions:\n- How long does it take? Usually 2-4 hours for wireless, up to 1 business day for landlines\n- What info do I need? Account number, PIN/password, and your current phone number\n- Will I lose my service? Nope! Your old service works until the switch is done\n\nMore details here:\nhttps://golitemobile.com/help-and-support/ (search for 'porting')\n\nReady to start, or still have questions?",
+      "suggestions": [
+        "Switch carriers",
+        "Bring your own phone",
+        "Activation help",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "activation_help",
+      "keywords": [
+        "activation help",
+        "how do i activate",
+        "got my sim",
+        "cant activate",
+        "activate sim",
+        "activate esim",
+        "activation",
+        "sim activation",
+        "how to activate",
+        "activate my sim",
+        "got my sim card"
+      ],
+      "response": "Congrats on getting your SIM! Let's get you connected.\n\nDo you have a physical SIM card or an eSIM?\n\nPhysical SIM:\nhttps://golitemobile.com/activate-sim/\neSIM: Same link, just select eSIM option\n\nQuick activation steps:\n1. Insert your SIM (or follow eSIM instructions)\n2. Fill out the activation form\n3. Wait 5-10 minutes for activation\n4. Restart your phone\n\nStuck somewhere? Let me know what's happening and I'll troubleshoot with you!",
+      "suggestions": [
+        "Physical SIM",
+        "eSIM setup",
+        "Bring your own phone",
+        "Technical issues"
+      ]
+    },
+    {
+      "id": "activation_failed",
+      "keywords": [
+        "activation failed",
+        "activation not working",
+        "cant activate sim",
+        "sim not activating",
+        "error activating",
+        "activation error",
+        "activation fails",
+        "wont activate"
+      ],
+      "response": "No problem, let's figure this out. A few quick questions:\n- Did you get any error messages?\n- Is your phone showing any signal bars?\n- Have you restarted your phone since inserting the SIM?\n\nAlso, make sure your phone is compatible:\nhttps://golitemobile.com/byod/\n\nIf it's still not working, I can escalate this to our tech team right now.",
+      "suggestions": [
+        "Check compatibility",
+        "Technical issues",
+        "Escalate issue",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "physical_sim",
+      "keywords": [
+        "physical sim",
+        "sim card",
+        "insert sim",
+        "activate physical sim",
+        "physical sim card"
+      ],
+      "response": "For a physical SIM, use the activation page here:\nhttps://golitemobile.com/activate-sim/\n\nInsert the SIM, complete the form, wait 5-10 minutes, then restart your phone.",
+      "suggestions": [
+        "Activation help",
+        "eSIM setup",
+        "Technical issues",
+        "Bring your own phone"
+      ]
+    },
+    {
+      "id": "esim_setup",
+      "keywords": [
+        "esim",
+        "esim setup",
+        "activate esim",
+        "instant esim",
+        "digital sim",
+        "e-sim"
+      ],
+      "response": "GoLite supports eSIM through the same activation flow:\nhttps://golitemobile.com/activate-sim/\n\nChoose the eSIM option during activation, follow the instructions, wait a few minutes, and then restart your phone if needed.",
+      "suggestions": [
+        "Activation help",
+        "Bring your own phone",
+        "Lost SIM",
+        "Technical issues"
+      ]
+    },
+    {
+      "id": "account_billing",
+      "keywords": [
+        "cant access account",
+        "how do i pay",
+        "autopay",
+        "account",
+        "billing help",
+        "account help",
+        "my bill",
+        "account question"
+      ],
+      "response": "I can help with that! What's going on?\n\nA) Need to log into my account\nB) Question about my bill\nC) Want to set up AutoPay\nD) Need to update payment method\nE) Something else",
+      "suggestions": [
+        "Login help",
+        "Billing questions",
+        "Set up AutoPay",
+        "payment"
+      ]
+    },
+    {
+      "id": "login_help",
+      "keywords": [
+        "login help",
+        "login",
+        "cant log in",
+        "cannot log in",
+        "forgot password",
+        "forgot username",
+        "access account",
+        "log into my account",
+        "sign in"
+      ],
+      "response": "Login page:\nhttps://golitemobile.com/login/\n\nForgot your password? Click 'Forgot Password' on that page.\n\nDon't have an account yet? You'll create one during activation or when you sign up for a plan.\n\nStill stuck? I can help reset your credentials - just need to verify some info first.",
+      "suggestions": [
+        "Account & billing",
+        "Billing questions",
+        "payment",
+        "Track order"
+      ]
+    },
+    {
+      "id": "billing_questions",
+      "keywords": [
+        "bill",
+        "billing",
+        "billing question",
+        "billing questions",
+        "Billing questions",
+        "Billing question",
+        "question about my bill",
+        "surprise bill",
+        "billing cycle",
+        "line item",
+        "prepaid billing",
+        "postpaid billing"
+      ],
+      "response": "For prepaid customers: You pay upfront each month, so no surprise bills!\n\nFor postpaid customers: You pay at the end of your billing cycle.\n\nCheck your account here:\nhttps://golitemobile.com/login/\n\nSee anything weird on your bill? Let me know what line item you're curious about and I'll explain it.",
+      "suggestions": [
+        "Account & billing",
+        "Set up AutoPay",
+        "payment",
+        "Login help"
+      ]
+    },
+    {
+      "id": "autopay",
+      "keywords": [
+        "autopay",
+        "set up autopay",
+        "automatic payments",
+        "autopay discount",
+        "auto pay",
+        "payment",
+        "Payment",
+        "Update payment method"
+      ],
+      "response": "You can manage payments in your account:\nhttps://golitemobile.com/login/\n\nWe accept:\n- Credit/debit cards\n- Bank accounts (for AutoPay)\n- Digital wallets\n\nAutoPay discounts are available on select plans - you'll see the option when you set it up!",
+      "suggestions": [
+        "Help and support",
+        "Account & billing",
+        "Billing questions",
+        "Login help"
+      ]
+    },
+    {
+      "id": "payment_method",
+      "keywords": [
+        "update payment method",
+        "payment method",
+        "credit card",
+        "bank account",
+        "digital wallet",
+        "change card",
+        "debit card",
+        "change payment"
+      ],
+      "response": "You can manage payments in your account:\nhttps://golitemobile.com/login/\n\nWe accept:\n- Credit/debit cards\n- Bank accounts (for AutoPay)\n- Digital wallets\n\nAutoPay discounts are available on select plans - you'll see the option when you set it up!",
+      "suggestions": [
+        "Set up AutoPay",
+        "Account & billing",
+        "Billing questions",
+        "Login help"
+      ]
+    },
+    {
+      "id": "special_discounts",
+      "keywords": [
+        "special discounts",
+        "discount",
+        "military discount",
+        "student discount",
+        "first responder",
+        "senior discount",
+        "veterans discount",
+        "emt discount",
+        "firefighter discount",
+        "police discount",
+        "paramedic discount",
+        "911 dispatcher",
+        "army personnel"
+      ],
+      "response": "Yes! We offer special discounts for:\n- 🎖️ Military & Veterans (Army personnel and veterans)\n- 🎓 Students\n- 🚒 First Responders (Police, Firefighters, EMTs, Paramedics, 911 Dispatchers)\n- 👴 Seniors (65+)\n\nWhich one applies to you?\nI'll send you the right verification form!\n\nhttps://golitemobile.com/military-discount-eligibility-form/\nhttps://golitemobile.com/students-discount-application/\nhttps://golitemobile.com/first-responder-discount-application/\nhttps://golitemobile.com/senior-citizen-discount-enrollment-form/\n\nJust fill out the form and upload your verification document. Once approved, your discount will be applied to your account. Usually takes 1-2 business days!",
+      "suggestions": [
+        "Military discount",
+        "Student discount",
+        "First responder discount",
+        "Senior discount"
+      ]
+    },
+    {
+      "id": "military_discount",
+      "keywords": [
+        "military",
+        "veteran",
+        "veterans",
+        "army",
+        "military discount",
+        "army personnel",
+        "veteran discount"
+      ],
+      "response": "We offer a special discount for Military & Veterans (Army personnel and veterans).\n\nApply here:\nhttps://golitemobile.com/military-discount-eligibility-form/\n\nJust fill out the form and upload your verification document. Once approved, your discount will be applied to your account. Usually takes 1-2 business days!",
+      "suggestions": [
+        "Special discounts",
+        "Student discount",
+        "First responder discount",
+        "Plans overview"
+      ]
+    },
+    {
+      "id": "student_discount",
+      "keywords": [
+        "student",
+        "student discount",
+        "college",
+        "university",
+        "school discount",
+        "student verification"
+      ],
+      "response": "We offer a special discount for Students.\n\nApply here:\nhttps://golitemobile.com/students-discount-application/\n\nJust fill out the form and upload your verification document. Once approved, your discount will be applied to your account. Usually takes 1-2 business days!",
+      "suggestions": [
+        "Special discounts",
+        "Military discount",
+        "Senior discount",
+        "Plans overview"
+      ]
+    },
+    {
+      "id": "first_responder_discount",
+      "keywords": [
+        "first responder",
+        "firefighter",
+        "police",
+        "emt",
+        "paramedic",
+        "911 dispatcher",
+        "first responder discount"
+      ],
+      "response": "We offer a special discount for First Responders (Police, Firefighters, EMTs, Paramedics, 911 Dispatchers).\n\nApply here:\nhttps://golitemobile.com/first-responder-discount-application/\n\nJust fill out the form and upload your verification document. Once approved, your discount will be applied to your account. Usually takes 1-2 business days!",
+      "suggestions": [
+        "Special discounts",
+        "Military discount",
+        "Student discount",
+        "Plans overview"
+      ]
+    },
+    {
+      "id": "senior_discount",
+      "keywords": [
+        "senior",
+        "65",
+        "senior discount",
+        "senior citizen",
+        "elderly discount",
+        "65 plus",
+        "seniors"
+      ],
+      "response": "We offer a special discount for Seniors (65+).\n\nApply here:\nhttps://golitemobile.com/senior-citizen-discount-enrollment-form/\n\nJust fill out the form and upload your verification document. Once approved, your discount will be applied to your account. Usually takes 1-2 business days!",
+      "suggestions": [
+        "Special discounts",
+        "Military discount",
+        "Student discount",
+        "Plans overview"
+      ]
+    },
+    {
+      "id": "technical_support",
+      "keywords": [
+        "technical issues",
+        "no service",
+        "phone not working",
+        "data not working",
+        "calls dropping",
+        "network status",
+        "signal problem",
+        "service down",
+        "no signal",
+        "phone issues",
+        "not working",
+        "technical support"
+      ],
+      "response": "Let's get you back online! First, some quick troubleshooting:\n\nTry these:\n1. Restart your phone\n2. Turn airplane mode ON for 10 seconds, then OFF\n3. Check if you have signal bars\n4. Make sure mobile data is enabled in settings\n\nStill not working?\nLet me know:\n- When did this start?\n- Are you in your usual area or somewhere new?\n- Is it affecting calls, texts, data, or everything?\n\nAlso check our network status:\nhttps://golitemobile.com/network-status/\n\nIf there's an outage, we're already on it!",
+      "suggestions": [
+        "Network status",
+        "SIM card help",
+        "Activation help",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "lost_or_damaged_sim",
+      "keywords": [
+        "lost sim",
+        "sim card broken",
+        "damaged sim",
+        "replacement sim",
+        "lost my sim",
+        "lost or damaged sim",
+        "sim not recognized",
+        "broken sim",
+        "sim stolen",
+        "lost stolen sim"
+      ],
+      "response": "Don't worry - we'll get you a replacement!\n\nHere's how:\nReport it here:\nhttps://golitemobile.com/lost-sim/\n\nGood news:\n- First replacement in 12 months is FREE\n- If you have Go Protect, all replacements are free\n- We can also set you up with an eSIM (no waiting for shipping!)\n\nWant to go the eSIM route? They activate instantly - let me know and I'll guide you through it!",
+      "suggestions": [
+        "Report lost SIM",
+        "eSIM setup",
+        "Device protection",
+        "Technical issues"
+      ]
+    },
+    {
+      "id": "device_protection",
+      "keywords": [
+        "device protection",
+        "insurance",
+        "broken phone",
+        "phone protection",
+        "file a claim",
+        "go protect",
+        "cracked screen",
+        "water damage",
+        "theft",
+        "mechanical breakdown",
+        "phone insurance"
+      ],
+      "response": "Smart move! Our device protection covers:\n✅ Accidental damage (cracked screens, drops)\n✅ Water damage\n✅ Theft\n✅ Mechanical breakdown\n\nPlans available for phones, tablets, and smartwatches.\n\nCheck it out:\nhttps://golitemobile.com/device-protection/\n\nAlready have protection and need to file a claim? I can help with that too!",
+      "suggestions": [
+        "What's covered",
+        "File a claim",
+        "Lost SIM",
+        "Bring your own phone"
+      ]
+    },
+    {
+      "id": "business_plans",
+      "keywords": [
+        "business plan",
+        "business",
+        "multiple lines for work",
+        "business lines",
+        "business roaming",
+        "dedicated account manager",
+        "business sales",
+        "need lines for work",
+        "enterprise",
+        "business solutions",
+        "golite for business"
+      ],
+      "response": "Perfect! Our business plans are built for teams that need multiple lines for work.\n\nWhat you get:\n- Multi-line discounts\n- Priority network access\n- Dedicated account manager\n- Business roaming packages\n\nTop result:\nhttps://golitemobile.com/business/\n\nIf you need 5+ lines or a custom setup, our business team can help with the right solution. How many lines do you need?",
+      "suggestions": [
+        "Business plans",
+        "Talk to sales",
+        "Postpaid plans",
+        "Family plans"
+      ]
+    },
+    {
+      "id": "frustrated_customer",
+      "keywords": [
+        "frustrated",
+        "angry",
+        "upset",
+        "this is annoying",
+        "this is frustrating",
+        "not happy",
+        "terrible service",
+        "worst",
+        "ridiculous",
+        "unhappy"
+      ],
+      "response": "I totally understand - that sounds frustrating. Let me see what I can do to help fix this.\n\nCan you tell me a bit more about what happened? I want to make sure we fix this properly.\n\nIf I can't solve this in chat, I'll make sure to escalate it to someone who can. You've got my full attention!",
+      "suggestions": [
+        "Technical issues",
+        "Account & billing",
+        "Activation help",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "closing",
+      "keywords": [
+        "thanks",
+        "thank you",
+        "bye",
+        "goodbye",
+        "done",
+        "that's all",
+        "all set",
+        "no more questions"
+      ],
+      "response": "Is there anything else I can help you with today?\n\nBefore you go:\n- Save this chat if you need to reference it later\n- Check out our help center:\nhttps://golitemobile.com/help-and-support/\n- Track your orders:\nhttps://golitemobile.com/track-order/\n\nThanks for choosing GoLite Mobile! 🌊",
+      "suggestions": [
+        "Exploring plans",
+        "Activation help",
+        "Track order",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "help_center_home",
+      "keywords": [
+        "help center",
+        "help home",
+        "support home",
+        "welcome to support",
+        "golite support",
+        "support page"
+      ],
+      "response": "Welcome to GoLite Support - We're here to help you stay connected\n\nWhat can we help you with today?\n[Search box: Try 'activate SIM' or 'switch carriers']\n\nMain Categories:\n1. Getting Started\n2. Plans & Features\n3. Account Management\n4. Technical Support\n5. Protection & Add-Ons\n6. Business Solutions",
+      "suggestions": [
+        "Getting started",
+        "Plans & features",
+        "Account management",
+        "Technical support",
+        "Business solutions"
+      ]
+    },
+    {
+      "id": "getting_started",
+      "keywords": [
+        "getting started",
+        "new to golite",
+        "start here",
+        "how to start",
+        "new customer",
+        "just joined"
+      ],
+      "response": "Getting Started\n\n\"New to GoLite? Start here!\"\n- Overview of services\n- How to choose a plan:\nhttps://golitemobile.com/plans-features-overview/\n- Bring your own device:\nhttps://golitemobile.com/byod/\n- Order a SIM card\n\n\"Activating Your SIM Card\"\n- Step-by-step activation guide:\nhttps://golitemobile.com/activate-sim/\n- Physical SIM vs eSIM\n- Troubleshooting activation issues\n- Video tutorial (if available)\n\n\"Switching to GoLite Mobile\"\n- Check number eligibility:\nhttps://golitemobile.com/switch-and-save/\n- What you'll need to switch\n- How long does porting take?\n- What happens to my old service?",
+      "suggestions": [
+        "Activate SIM",
+        "Bring your own phone",
+        "Switch carriers",
+        "Plans overview"
+      ]
+    },
+    {
+      "id": "plans_features_help",
+      "keywords": [
+        "plans and features",
+        "understanding our plans",
+        "prepaid vs postpaid",
+        "what is included in every plan",
+        "plans features",
+        "plan types"
+      ],
+      "response": "Plans & Features\n\n\"Understanding Our Plans\"\n- Prepaid vs Postpaid explained\n- Prepaid plans:\nhttps://golitemobile.com/prepaid-plans/\n- Postpaid plans:\nhttps://golitemobile.com/plans/postpaid-plan/\n- What's included in every plan?\n\n\"Family & Multi-Line Plans\"\n- How family plans work:\nhttps://golitemobile.com/shop-family-multi-line-plans/\n- Sharing data across lines\n- Adding and removing lines\n- Multi-line discounts\n\n\"International Services\"\nhttps://golitemobile.com/international-calls/\nhttps://golitemobile.com/travel-plans/\nhttps://golitemobile.com/international-roaming/\n\n\"Special Plans & Discounts\"\nhttps://golitemobile.com/military-discount-eligibility-form/\nhttps://golitemobile.com/students-discount-application/\nhttps://golitemobile.com/first-responder-discount-application/\nhttps://golitemobile.com/senior-citizen-discount-enrollment-form/\n- Current promotions:\nhttps://golitemobile.com/special-offers-promotions/",
+      "suggestions": [
+        "Prepaid plans",
+        "Postpaid plans",
+        "Family plans",
+        "International",
+        "Special discounts"
+      ]
+    },
+    {
+      "id": "account_management_help",
+      "keywords": [
+        "account management",
+        "managing your plan",
+        "accessing your account",
+        "change plan",
+        "add top up",
+        "manage account",
+        "account settings"
+      ],
+      "response": "Account Management\n\n\"Accessing Your Account\"\n- Login page:\nhttps://golitemobile.com/login/\n- Forgot password/username\n- Creating an account\n- Account security tips\n\n\"Managing Your Plan\"\n- Changing plans\n- Adding top-up:\nhttps://golitemobile.com/top-up/\n- AutoPay setup\n- Understanding your bill\n\n\"Tracking Your Order\"\n- Order status:\nhttps://golitemobile.com/track-order/\n- Shipping information\n- What to do if your order hasn't arrived",
+      "suggestions": [
+        "Login help",
+        "Top-up plans",
+        "Track order",
+        "Billing questions"
+      ]
+    },
+    {
+      "id": "technical_support_help",
+      "keywords": [
+        "technical support help",
+        "troubleshooting connection",
+        "connection issues",
+        "device compatibility",
+        "sim card help",
+        "sim not recognized"
+      ],
+      "response": "Technical Support\n\nArticles and help topics:\n\n\"Troubleshooting Connection Issues\"\n- No service or signal\n- Data not working\n- Calls dropping\n- Network status:\nhttps://golitemobile.com/network-status/\n\n\"Device Compatibility\"\n- Check compatibility:\nhttps://golitemobile.com/byod/\n- Supported devices\n- Unlocking your phone\n- IMEI checking guide\n\n\"SIM Card Help\"\n- Lost or stolen SIM:\nhttps://golitemobile.com/lost-sim/\n- Damaged SIM replacement\n- eSIM setup\n- SIM not recognized",
+      "suggestions": [
+        "Network status",
+        "Check compatibility",
+        "Lost SIM",
+        "eSIM setup"
+      ]
+    },
+    {
+      "id": "protection_addons",
+      "keywords": [
+        "protection and add-ons",
+        "additional services",
+        "extra calling minutes",
+        "mobile hotspot",
+        "data rollover",
+        "add-ons",
+        "addons"
+      ],
+      "response": "Protection & Add-Ons\n\n\"Device Protection Plans\"\n- What's covered:\nhttps://golitemobile.com/device-protection/\n- Filing a claim\n- Coverage for BYOD\n- Multi-device protection\n\n\"Additional Services\"\n- International add-ons\n- Extra calling minutes:\nhttps://golitemobile.com/international-calls/\n- Mobile hotspot\n- Data rollover explained",
+      "suggestions": [
+        "Device protection",
+        "International calling",
+        "File a claim",
+        "Bring your own phone"
+      ]
+    },
+    {
+      "id": "business_solutions",
+      "keywords": [
+        "business solutions",
+        "golite for business",
+        "multi-line management",
+        "dedicated support",
+        "contact business sales",
+        "business overview"
+      ],
+      "response": "Business Solutions\n\nArticles and help topics:\n\n\"GoLite for Business\"\n- Business plans overview:\nhttps://golitemobile.com/business/\n- Multi-line management\n- Dedicated support\n- Contact business sales",
+      "suggestions": [
+        "Business plans",
+        "Family plans",
+        "Postpaid plans",
+        "Contact support"
+      ]
+    },
+    {
+      "id": "search_activate",
+      "keywords": ["search activate", "find activation", "activate search"],
+      "response": "Search results for \"activate\":\n\nTop Searches:\n1. Activating Your SIM Card\n\"Step-by-step guide to activate your physical SIM or eSIM\"\nhttps://golitemobile.com/activate-sim/\n\n2. Activation Troubleshooting\n\"Common activation issues and what to check next\"\n\n3. Do I need to activate international calling?\n\"Learn how international features work with your GoLite service\"\n\nRelated Articles:\n- Switching to GoLite Mobile\n- Device Compatibility Check\n- SIM Card Help",
+      "suggestions": [
+        "Activate SIM",
+        "Switch carriers",
+        "Check compatibility",
+        "SIM card help"
+      ]
+    },
+    {
+      "id": "search_international",
+      "keywords": [
+        "search international",
+        "find international plans",
+        "looking for international"
+      ],
+      "response": "Search results for \"international\":\n\nTop Searches:\n1. International Calling Plans\n\"Add extra minutes for worldwide calling\"\nhttps://golitemobile.com/international-calls/\n\n2. Travel Plans\n\"Stay connected while traveling abroad\"\nhttps://golitemobile.com/travel-plans/\n\n3. International Roaming\n\"Use your phone outside the US with roaming options\"\nhttps://golitemobile.com/international-roaming/\n\nRelated topics:\n- Supported countries\n- International add-ons\n- Travel coverage",
+      "suggestions": [
+        "International calling",
+        "Travel plans",
+        "International roaming",
+        "Plans overview"
+      ]
+    },
+    {
+      "id": "faq",
+      "keywords": [
+        "faq",
+        "frequently asked questions",
+        "common questions",
+        "quick answers"
+      ],
+      "response": "Most Common Questions:\n\n\"Can I keep my phone number?\"\nYes! You can transfer your number from any carrier. Start here:\nhttps://golitemobile.com/switch-and-save/\n\n\"Do you have 5G?\"\nAbsolutely! All our plans include 5G access where available.\n\n\"Are there contracts?\"\nPrepaid plans have no contracts. Postpaid plans offer flexible 12 or 24-month options. Learn more:\nhttps://golitemobile.com/plans-features-overview/\n\n\"Can I bring my own phone?\"\nYes! Check compatibility here:\nhttps://golitemobile.com/byod/\n\n\"What network do you use?\"\nWe use the same networks as major carriers (Verizon, AT&T, T-Mobile) to give you reliable nationwide coverage.\n\n\"How do I track my order?\"\nLog in here:\nhttps://golitemobile.com/track-order/\n\n\"What if I lose my SIM card?\"\nReport it here for a free replacement:\nhttps://golitemobile.com/lost-sim/\n\n\"Do you offer student discounts?\"\nYes! Apply here:\nhttps://golitemobile.com/students-discount-application/",
+      "suggestions": [
+        "Switch carriers",
+        "Bring your own phone",
+        "Track order",
+        "Student discount"
+      ]
+    },
+    {
+      "id": "contact_options",
+      "keywords": [
+        "still need help",
+        "contact us",
+        "talk to someone",
+        "live chat",
+        "browse by topic",
+        "check network status",
+        "business inquiries",
+        "contact support"
+      ],
+      "response": "Still need help?\n\nLive Chat\n\"Chat with our team now\"\n[Launch Tawk.to chat]\n\nBrowse by Topic\n\"Explore all help articles\"\nhttps://golitemobile.com/help-and-support\n\nCheck Network Status\n\"See if there are any outages\"\nhttps://golitemobile.com/network-status/\n\nBusiness Inquiries\n\"Contact our business team\"\nhttps://golitemobile.com/business/",
+      "suggestions": [
+        "Technical issues",
+        "Business plans",
+        "Network status",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "search_bar_info",
+      "keywords": [
+        "search bar",
+        "website search",
+        "search plans help",
+        "search anything"
+      ],
+      "response": "Website Search Bar\n\nLocation: Top right of every page (sticky header)\nPlaceholder text: \"Search plans, help, or anything...\"\nIcon: Magnifying glass\n\nPopular searches:\n- Prepaid plans\n- Activate SIM\n- Switch carriers\n- Student discount\n- Family plans\n- International calling",
+      "suggestions": [
+        "Prepaid plans",
+        "Activate SIM",
+        "Switch carriers",
+        "Student discount"
+      ]
+    },
+    {
+      "id": "search_prepaid",
+      "keywords": [
+        "search prepaid",
+        "find prepaid",
+        "looking for prepaid",
+        "prepaid search"
+      ],
+      "response": "Search results for \"prepaid\":\n\n1. Prepaid Plans\n\"No contracts, pay as you go with 5G speeds\"\nhttps://golitemobile.com/prepaid-plans/\n\n2. Top-Up Plans\nhttps://golitemobile.com/top-up/\n\n3. Travel Plans\nhttps://golitemobile.com/travel-plans/",
+      "suggestions": [
+        "Prepaid plans",
+        "Top-up plans",
+        "Travel plans",
+        "Plans overview"
+      ]
+    },
+    {
+      "id": "search_postpaid",
+      "keywords": ["search postpaid", "find postpaid", "looking for postpaid"],
+      "response": "Search results for \"postpaid\":\n\n1. Postpaid Plans\nhttps://golitemobile.com/plans/postpaid-plan/\n\n2. Business Plans\nhttps://golitemobile.com/business/",
+      "suggestions": [
+        "Postpaid plans",
+        "Business plans",
+        "Plans overview",
+        "Family plans"
+      ]
+    },
+    {
+      "id": "search_family",
+      "keywords": ["search family", "find family plans", "looking for family"],
+      "response": "Search results for \"family\":\n\n1. Family & Multi-Line Plans\nhttps://golitemobile.com/shop-family-multi-line-plans/\n\n2. Prepaid Plans (multi-line eligible)\nhttps://golitemobile.com/prepaid-plans/\n\n3. Postpaid Plans (multi-line eligible)\nhttps://golitemobile.com/plans/postpaid-plan/",
+      "suggestions": [
+        "Family plans",
+        "Prepaid plans",
+        "Postpaid plans",
+        "Business plans"
+      ]
+    },
+    {
+      "id": "search_unlimited",
+      "keywords": [
+        "search unlimited",
+        "find unlimited",
+        "unlimited plans search"
+      ],
+      "response": "Search results for \"unlimited\":\n\n1. View All Plans\nhttps://golitemobile.com/plans-features-overview/\n\n2. Prepaid Plans\nhttps://golitemobile.com/prepaid-plans/\n\n3. Postpaid Plans\nhttps://golitemobile.com/plans/postpaid-plan/",
+      "suggestions": [
+        "Plans overview",
+        "Prepaid plans",
+        "Postpaid plans",
+        "Heavy data"
+      ]
+    },
+    {
+      "id": "search_travel",
+      "keywords": ["search travel", "find travel plans", "looking for travel"],
+      "response": "Search results for \"travel\":\n\n1. Travel Plans\nhttps://golitemobile.com/travel-plans/\n\n2. International Roaming\nhttps://golitemobile.com/international-roaming/",
+      "suggestions": [
+        "Travel plans",
+        "International roaming",
+        "International calling",
+        "Plans overview"
+      ]
+    },
+    {
+      "id": "search_business",
+      "keywords": [
+        "search business",
+        "find business plans",
+        "looking for business"
+      ],
+      "response": "Search results for \"business\":\n\n1. Business Plans\nhttps://golitemobile.com/business/\n\n2. Postpaid Plans\nhttps://golitemobile.com/plans/postpaid-plan/",
+      "suggestions": [
+        "Business plans",
+        "Postpaid plans",
+        "Family plans",
+        "Plans overview"
+      ]
+    },
+    {
+      "id": "shop_phones",
+      "keywords": [
+        "shop phones",
+        "buy phone",
+        "get a phone",
+        "new phone",
+        "devices",
+        "mobiles",
+        "phone device"
+      ],
+      "response": "Search results for \"phone\" or \"device\":\n\n1. Shop Phones\nhttps://golitemobile.com/product-category/mobiles/\n\n2. Bring Your Own Device\nhttps://golitemobile.com/byod/\n\n3. Device Protection\nhttps://golitemobile.com/device-protection/",
+      "suggestions": [
+        "Bring your own phone",
+        "Device protection",
+        "Plans overview",
+        "Activation help"
+      ]
+    },
+    {
+      "id": "search_switch_port",
+      "keywords": ["search switch", "search port", "find switch and save"],
+      "response": "Search results for \"switch\" or \"port\":\n\n1. Switch & Save\n\"Keep your number when you switch - check eligibility now\"\nhttps://golitemobile.com/switch-and-save/\n\n2. Keep Your Number Info\nhttps://golitemobile.com/help-and-support/",
+      "suggestions": [
+        "Switch carriers",
+        "Keep my number",
+        "Activation help",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "search_login_account",
+      "keywords": ["search login", "search account", "find account page"],
+      "response": "Search results for \"login\" or \"account\":\n\n1. Login to Your Account\nhttps://golitemobile.com/login/\n\n2. Track Your Order\nhttps://golitemobile.com/track-order/",
+      "suggestions": [
+        "Login help",
+        "Track order",
+        "Billing questions",
+        "Account & billing"
+      ]
+    },
+    {
+      "id": "search_lost_sim",
+      "keywords": ["search lost sim", "find lost sim page"],
+      "response": "Search results for \"lost sim\":\n\n1. Lost SIM Policy\nhttps://golitemobile.com/lost-sim/\n\n2. Activate New SIM\nhttps://golitemobile.com/activate-sim/",
+      "suggestions": [
+        "Lost SIM",
+        "Activation help",
+        "eSIM setup",
+        "Device protection"
+      ]
+    },
+    {
+      "id": "network_status",
+      "keywords": [
+        "network status",
+        "outage",
+        "outages",
+        "coverage",
+        "network",
+        "service down",
+        "same networks",
+        "what network do you use",
+        "coverage check"
+      ],
+      "response": "Search results for \"coverage\" or \"network\":\n\n1. Network Status\nhttps://golitemobile.com/network-status/\n\n2. About Our Network\nhttps://golitemobile.com/about-us/\n\nGoLite uses the same networks as Verizon, AT&T, and T-Mobile to give you reliable nationwide coverage.",
+      "suggestions": [
+        "Do you have 5G",
+        "Technical issues",
+        "Bring your own phone",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "special_offers",
+      "keywords": [
+        "special offers",
+        "promotions",
+        "promo",
+        "current promotions",
+        "offer",
+        "discount offer",
+        "deals",
+        "sale"
+      ],
+      "response": "Search results for \"discount\" or \"promo\" or \"offer\":\n\n1. Special Offers & Promotions\nhttps://golitemobile.com/special-offers-promotions/\n\n2. Student Discount\nhttps://golitemobile.com/students-discount-application/\n\n3. Military Discount\nhttps://golitemobile.com/military-discount-eligibility-form/\n\n4. Senior Discount\nhttps://golitemobile.com/senior-citizen-discount-enrollment-form/",
+      "suggestions": [
+        "Special discounts",
+        "Military discount",
+        "Student discount",
+        "Plans overview"
+      ]
+    },
+    {
+      "id": "about_us",
+      "keywords": [
+        "about us",
+        "about golite",
+        "company info",
+        "about",
+        "contact",
+        "store",
+        "location",
+        "find a store"
+      ],
+      "response": "\n1. About Us\nhttps://golitemobile.com/about-us/\n\nSearch results for \"contact\" or \"support\" or \"help\":\n\n1. Help & Support\nhttps://golitemobile.com/help-and-support/\n2. [Live Chat Button - opens Tawk.to]\n\nSearch results for \"store\" or \"location\":\n\n1. Find a Store\nhttps://golitemobile.com/business/",
+      "suggestions": [
+        "Help and support",
+        "Business plans",
+        "Track order",
+        "Plans overview"
+      ]
+    },
+    {
+      "id": "no_results",
+      "keywords": [
+        "no results",
+        "cant find",
+        "not found",
+        "nothing came up",
+        "search not working"
+      ],
+      "response": "We couldn't find what you were looking for - but we can still help!\n\nTry:\n- Checking your spelling\n- Using different keywords (try 'plans' instead of 'pricing')\n- Browsing our popular pages below\n\nPopular Pages:\n- View All Plans:\nhttps://golitemobile.com/plans-features-overview/\n- Help & Support:\nhttps://golitemobile.com/help-and-support/\n- Switch to GoLite:\nhttps://golitemobile.com/switch-and-save/\n- Bring Your Phone:\nhttps://golitemobile.com/byod/\n\nStill stuck? [Chat with us now] or call [support number]",
+      "suggestions": [
+        "Plans overview",
+        "Help and support",
+        "Switch carriers",
+        "Bring your own phone"
+      ]
+    },
+    {
+      "id": "autocomplete_suggestions",
+      "keywords": [
+        "autocomplete",
+        "search suggestions",
+        "as i type",
+        "auto complete",
+        "type suggestions"
+      ],
+      "response": "Search Suggestions (Auto-complete)\n\nTypes: \"act...\"\nSuggests:\n- Activate SIM\n- Activation help\n- Account login\n\nTypes: \"bus...\"\nSuggests:\n- Business plans\n- Business solutions\n- Business sales\n\nTypes: \"fam...\"\nSuggests:\n- Family plans\n- Family & multi-line plans\n\nTypes: \"int...\"\nSuggests:\n- International calling\n- International roaming\n- International travel plans\n\nTypes: \"stu...\"\nSuggests:\n- Student discount\n- Student verification",
+      "suggestions": [
+        "Activation help",
+        "Family plans",
+        "International calling",
+        "Student discount"
+      ]
+    },
+    {
+      "id": "popular_searches",
+      "keywords": [
+        "popular searches",
+        "most searched",
+        "trending searches",
+        "what do people search"
+      ],
+      "response": "Popular searches:\n- Prepaid plans\n- Activate SIM\n- Switch carriers\n- Student discount\n- Family plans\n- International calling",
+      "suggestions": [
+        "Prepaid plans",
+        "Activate SIM",
+        "Switch carriers",
+        "Student discount"
+      ]
+    },
+    {
+      "id": "tone_guidelines",
+      "keywords": [
+        "tone guidelines",
+        "language guidelines",
+        "how to speak to customers",
+        "communication style",
+        "dos and donts",
+        "do and dont"
+      ],
+      "response": "Tone & Language Guidelines\n\n✅ DO:\n- Use conversational, friendly language\n- Address customer directly (\"you,\" \"your\")\n- Break complex info into simple steps\n- Offer choices when possible\n- Acknowledge frustrations with empathy\n- Use emojis sparingly for visual breaks (🌊, ✅, 📱)\n\n❌ DON'T:\n- Use jargon without explanation\n- Sound robotic or scripted\n- Overwhelm with too many options at once\n- Make assumptions about technical knowledge\n- Use sales-heavy language constantly",
+      "suggestions": [
+        "Key phrases",
+        "Conversion language",
+        "Escalation protocol",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "key_phrases",
+      "keywords": [
+        "key phrases",
+        "phrases to use",
+        "what to say",
+        "conversation starters",
+        "how to respond"
+      ],
+      "response": "Key Phrases to Use\n\nStarting conversations:\n- \"Let's figure this out together\"\n- \"I can help with that\"\n- \"Great question!\"\n- \"No worries - this is simple\"\n\nGuiding next steps:\n- \"Here's what to do next\"\n- \"The quickest way is...\"\n- \"Here's how it works\"\n- \"Let me point you to...\"\n\nHandling issues:\n- \"I totally understand\"\n- \"Let's get this fixed\"\n- \"Don't worry - we've got you\"\n- \"That shouldn't be happening\"\n\nClosing:\n- \"Anything else I can help with?\"\n- \"You're all set!\"\n- \"Feel free to reach out anytime\"",
+      "suggestions": [
+        "Tone guidelines",
+        "Conversion language",
+        "Frustrated customer",
+        "Closing"
+      ]
+    },
+    {
+      "id": "conversion_language",
+      "keywords": [
+        "conversion language",
+        "how to upsell",
+        "not pushy",
+        "sales language",
+        "conversion focused"
+      ],
+      "response": "Conversion-Focused Language (Not Pushy)\n\nInstead of: \"Buy now!\"\nUse: \"Ready to get started? Here's where to pick your plan\"\n\nInstead of: \"Limited time offer!\"\nUse: \"By the way, we've got some special offers running right now if you're interested\"\n\nInstead of: \"You should upgrade\"\nUse: \"Based on what you're telling me, [plan name] might be a better fit - want to check it out?\"",
+      "suggestions": [
+        "Exploring plans",
+        "Special offers",
+        "Plans overview",
+        "Tone guidelines"
+      ]
+    },
+    {
+      "id": "metrics",
+      "keywords": [
+        "metrics",
+        "track metrics",
+        "what to measure",
+        "kpis",
+        "performance tracking",
+        "metrics to track"
+      ],
+      "response": "Metrics to Track\n\nTawk.to Chat:\n- First response time\n- Resolution rate\n- Customer satisfaction (CSAT)\n- Conversion rate from chat\n- Most common questions\n\nHelp Center:\n- Article views\n- Search success rate\n- Time on page\n- Articles that lead to conversions\n- Articles that lead to live chat\n\nWebsite Search:\n- Most searched terms\n- Zero-result searches\n- Click-through rate on results\n- Conversion rate from search\n- Search-to-purchase path",
+      "suggestions": [
+        "Help center",
+        "Tone guidelines",
+        "Escalation protocol",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "escalation_protocol",
+      "keywords": [
+        "escalation",
+        "escalate",
+        "speak to someone",
+        "talk to a human",
+        "escalation protocol",
+        "connect me to support",
+        "talk to agent",
+        "real person",
+        "human agent"
+      ],
+      "response": "Escalation Protocol\n\nWhen to escalate from chat/help center:\n\nImmediate escalation:\n- Account security concerns\n- Payment disputes\n- Service completely down\n- Harassment or abuse\n\nTechnical escalation:\n- Activation fails after troubleshooting\n- Network issues persist\n- SIM card problems after replacement\n- Account access issues after reset\n\nSales escalation:\n- Business inquiries (5+ lines)\n- Custom enterprise solutions\n- Partnership inquiries\n\nEscalation message:\n\"I want to make sure you get the right help for this. Let me connect you with [specialist/team] who can take care of this properly. They'll reach out within [timeframe].\"",
+      "suggestions": [
+        "Technical issues",
+        "Account & billing",
+        "Business plans",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "prepaid_plans",
+      "keywords": [
+        "prepaid",
+        "prepaid plans",
+        "pay as you go",
+        "no contract prepaid",
+        "prepaid plan"
+      ],
+      "response": "Prepaid plans let you pay upfront with no contracts.\n\nSee prepaid plans here:\nhttps://golitemobile.com/prepaid-plans/\n\nAll come with 5G access and no hidden fees.",
+      "suggestions": [
+        "Top-up plans",
+        "Plans overview",
+        "Basic affordable",
+        "Family plans"
+      ]
+    },
+    {
+      "id": "postpaid_plans",
+      "keywords": [
+        "postpaid",
+        "postpaid plans",
+        "monthly bill",
+        "postpaid billing",
+        "postpaid plan"
+      ],
+      "response": "Postpaid plans are billed at the end of your billing cycle. Flexible 12 or 24-month options available.\n\nSee postpaid plans here:\nhttps://golitemobile.com/plans/postpaid-plan/",
+      "suggestions": [
+        "Plans overview",
+        "Family plans",
+        "Business plans",
+        "Account & billing"
+      ]
+    },
+    {
+      "id": "plans_overview",
+      "keywords": [
+        "plans overview",
+        "plans features overview",
+        "compare plans",
+        "view all plans",
+        "all plans",
+        "what's included"
+      ],
+      "response": "The quickest way to compare all GoLite options is here:\nhttps://golitemobile.com/plans-features-overview/\n\nThat page explains plan types, included features, and how prepaid and postpaid options differ.",
+      "suggestions": [
+        "Prepaid plans",
+        "Postpaid plans",
+        "Family plans",
+        "Special offers"
+      ]
+    },
+    {
+      "id": "contracts",
+      "keywords": [
+        "contracts",
+        "do you have contracts",
+        "are there contracts",
+        "contract terms",
+        "12 months",
+        "24 months",
+        "no contract"
+      ],
+      "response": "Prepaid plans have no contracts. Postpaid plans offer flexible 12 or 24-month options.\n\nYou can compare here:\nhttps://golitemobile.com/plans-features-overview/",
+      "suggestions": [
+        "Prepaid plans",
+        "Postpaid plans",
+        "Plans overview",
+        "Exploring plans"
+      ]
+    },
+    {
+      "id": "top_up",
+      "keywords": [
+        "top up",
+        "top-up",
+        "top up plan",
+        "add credit",
+        "recharge",
+        "top up plans"
+      ],
+      "response": "Our top-up plan is our most budget-friendly option:\nhttps://golitemobile.com/top-up/\n\nAll top-up plans come with 5G access and no hidden fees. Great for light users who want simple, flexible billing.",
+      "suggestions": [
+        "Prepaid plans",
+        "Plans overview",
+        "Basic affordable",
+        "Account management"
+      ]
+    },
+    {
+      "id": "streaming_plans",
+      "keywords": [
+        "streaming plans",
+        "streaming enthusiast",
+        "streaming enthusiasts plans",
+        "data rollover plans"
+      ],
+      "response": "You sound like someone who needs unlimited everything! We've got plans built just for people who stream, scroll, and stay connected.\n\nCheck out our streaming enthusiast plans here:\nhttps://golitemobile.com/streaming-enthusiasts-plans/\n\nThese come with data rollover, hotspot, and free international calling. Want to know more about any specific features?",
+      "suggestions": [
+        "Plans overview",
+        "Heavy data",
+        "International",
+        "Special offers"
+      ]
+    },
+    {
+      "id": "international_roaming",
+      "keywords": [
+        "international roaming",
+        "roaming",
+        "using phone outside us",
+        "roaming charges",
+        "roaming plan"
+      ],
+      "response": "International Roaming — use your phone outside the US with GoLite's roaming options.\n\nLearn more here:\nhttps://golitemobile.com/international-roaming/\n\nAre you looking to call internationally from the US, or do you need service while traveling abroad? I can point you to the right plan!",
+      "suggestions": [
+        "Travel plans",
+        "International calling",
+        "Plans overview",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "track_order",
+      "keywords": [
+        "track order",
+        "order status",
+        "shipping",
+        "where is my order",
+        "order hasnt arrived",
+        "track my order",
+        "delivery"
+      ],
+      "response": "You can track your order here:\nhttps://golitemobile.com/track-order/\n\nThat page is the best place to check shipping updates, delivery progress, and order status.\n\nIf your order hasn't arrived, check the status link above first.",
+      "suggestions": [
+        "Track order",
+        "Login help",
+        "Activation help",
+        "Help and support"
+      ]
+    },
+    {
+      "id": "help_support",
+      "keywords": [
+        "help and support",
+        "support",
+        "help center",
+        "contact support",
+        "still need help",
+        "help page"
+      ],
+      "response": "GoLite's help center is here:\nhttps://golitemobile.com/help-and-support/\n\nCovers getting started, plans and features, account management, technical support, protection add-ons, and business solutions.",
+      "suggestions": [
+        "Activation help",
+        "Switch carriers",
+        "Account & billing",
+        "Technical issues"
+      ]
+    },
+    {
+      "id": "five_g",
+      "keywords": [
+        "5g",
+        "do you have 5g",
+        "5g access",
+        "does golite have 5g",
+        "5g network"
+      ],
+      "response": "Absolutely! All our plans include 5G access where available.",
+      "suggestions": [
+        "Bring your own phone",
+        "Technical issues",
+        "Exploring plans",
+        "Help and support"
+      ]
+    }
+  ]
+}
