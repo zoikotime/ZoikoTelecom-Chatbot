@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 
 const {
   buildChatResponse,
+  getAnalyticsSnapshot,
   getKnowledgeBase,
+  trackEvent,
 } = require("../services/chatService");
 
 async function getHealth(_req, res) {
@@ -11,7 +13,8 @@ async function getHealth(_req, res) {
 
     res.json({
       status: "ok",
-      service: "golite-chatbot-api",
+      service: "zoiko-chatbot-api",
+      assistant: knowledge.assistantName || "Zakko",
       database: mongoose.connection.readyState === 1 ? "connected" : "disconnected",
       intent_count: (knowledge.intents || []).length,
     });
@@ -26,26 +29,38 @@ async function getHealth(_req, res) {
 
 async function sendChatResponse(req, res) {
   try {
-    const { message = "" } = req.body || {};
-
-    // Backend flow:
-    // route -> controller -> service -> knowledge base -> response JSON
+    const { message = "", sessionId = "anonymous" } = req.body || {};
     const knowledge = await getKnowledgeBase();
-    const response = buildChatResponse(message, knowledge);
-
+    const response = buildChatResponse(message, knowledge, sessionId);
     res.json(response);
   } catch (error) {
     res.status(500).json({
-      response:
-        "I ran into a server issue while checking the GoLite knowledge base. Please try again in a moment.",
-      suggestions: ["Exploring plans", "Activation help", "Account & billing"],
+      response: "Something went wrong. Please try again or speak to an agent.",
+      suggestions: ["Back to Main Menu", "Speak to an Agent"],
       matched_intent: null,
+      ctas: [],
       error: error.message,
     });
   }
 }
 
+function getAnalytics(_req, res) {
+  res.json({ events: getAnalyticsSnapshot() });
+}
+
+function trackClientEvent(req, res) {
+  try {
+    const { event = "unknown", payload = {} } = req.body || {};
+    trackEvent(event, payload);
+    res.status(202).json({ ok: true });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+}
+
 module.exports = {
+  getAnalytics,
   getHealth,
   sendChatResponse,
+  trackClientEvent,
 };

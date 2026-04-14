@@ -1,13 +1,12 @@
 import { apiPaths } from "../api/apiPaths";
 
-export async function sendChatMessage(message) {
-  // This service is the only place where the frontend talks to the backend.
+export async function sendChatMessage(message, sessionId) {
   const response = await fetch(apiPaths.chat, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ message }),
+    body: JSON.stringify({ message, sessionId }),
   });
 
   if (!response.ok) {
@@ -15,4 +14,18 @@ export async function sendChatMessage(message) {
   }
 
   return response.json();
+}
+
+export async function trackChatEvent(event, payload = {}) {
+  try {
+    await fetch(apiPaths.analytics, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ event, payload }),
+    });
+  } catch (_error) {
+    // Avoid interrupting the chat flow if analytics fails.
+  }
 }

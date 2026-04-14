@@ -2,19 +2,28 @@ import { createContext, useContext, useEffect, useReducer, useRef } from "react"
 
 import { starterSuggestions } from "../data/uiConfig";
 import { sendChatMessage } from "../services/chatService";
-import { timeStampLabel } from "../utils/chat";
+import { createSessionId, timeStampLabel } from "../utils/chat";
 
 const ChatContext = createContext(null);
-
-const suggestionInputMap = {
-  "\u{1F50D} Exploring plans": "Exploring plans",
-  "\u{1F4F1} Bringing your own phone": "Bring your own phone",
-  "\u{1F504} Switching from another carrier": "Switch carriers",
-  "\u{2753} Something else": "Something else",
-};
+const STORAGE_KEY = "zoiko-chat-session-id";
 
 function getFixedSuggestions() {
   return starterSuggestions;
+}
+
+function getOrCreateSessionId() {
+  if (typeof window === "undefined") {
+    return createSessionId();
+  }
+
+  const existing = window.localStorage.getItem(STORAGE_KEY);
+  if (existing) {
+    return existing;
+  }
+
+  const sessionId = createSessionId();
+  window.localStorage.setItem(STORAGE_KEY, sessionId);
+  return sessionId;
 }
 
 function createWelcomeMessage() {
@@ -29,35 +38,26 @@ function createWelcomeMessage() {
 const initialState = {
   input: "",
   typing: false,
+  sessionId: getOrCreateSessionId(),
   messages: [createWelcomeMessage()],
 };
 
 function chatReducer(state, action) {
   switch (action.type) {
     case "SET_INPUT":
-      return {
-        ...state,
-        input: action.payload,
-      };
-
+      return { ...state, input: action.payload };
     case "ADD_MESSAGE":
-      return {
-        ...state,
-        messages: [...state.messages, action.payload],
-      };
-
+      return { ...state, messages: [...state.messages, action.payload] };
     case "SET_TYPING":
-      return {
-        ...state,
-        typing: action.payload,
-      };
-
-    case "RESET_CHAT":
+      return { ...state, typing: action.payload };
+    case "RESET_CHAT": {
+      const nextSessionId = getOrCreateSessionId();
       return {
         ...initialState,
+        sessionId: nextSessionId,
         messages: [createWelcomeMessage()],
       };
-
+    }
     default:
       return state;
   }
@@ -79,16 +79,10 @@ export function ChatProvider({ children }) {
 
   async function sendMessage(overrideText) {
     const rawText = (overrideText || state.input).trim();
-    const text = (suggestionInputMap[rawText] || rawText).trim();
-
-    if (!text || state.typing) {
+    if (!rawText || state.typing) {
       return;
     }
 
-    // Frontend flow:
-    // 1. Add the user bubble locally.
-    // 2. Call the backend chat API.
-    // 3. Add the bot reply from the API response.
     dispatch({
       type: "ADD_MESSAGE",
       payload: {
@@ -103,8 +97,8 @@ export function ChatProvider({ children }) {
     dispatch({ type: "SET_TYPING", payload: true });
 
     try {
-      const payload = await sendChatMessage(text);
-      await new Promise((resolve) => setTimeout(resolve, 700));
+      const payload = await sendChatMessage(rawText, state.sessionId);
+      await new Promise((resolve) => setTimeout(resolve, 450));
 
       dispatch({
         type: "ADD_MESSAGE",
@@ -113,9 +107,8 @@ export function ChatProvider({ children }) {
           type: "message",
           sender: "bot",
           text: payload.response,
-          suggestions: payload.suggestions?.length
-            ? payload.suggestions
-            : getFixedSuggestions(),
+          suggestions: payload.suggestions?.length ? payload.suggestions : getFixedSuggestions(),
+          ctas: payload.ctas || [],
           time: timeStampLabel(),
         },
       });
@@ -126,9 +119,9 @@ export function ChatProvider({ children }) {
           id: `${Date.now()}-error`,
           type: "message",
           sender: "bot",
-          text:
-            "I couldn't reach the GoLite server right now. Please make sure the Express backend is running on the configured API URL.",
-          suggestions: getFixedSuggestions(),
+          text: "Something went wrong. Please try again or speak to an agent.",
+          suggestions: ["Back to Main Menu", "Speak to an Agent"],
+          ctas: [],
           time: timeStampLabel(),
         },
       });
@@ -138,6 +131,10 @@ export function ChatProvider({ children }) {
   }
 
   function clearChat() {
+    if (typeof window !== "undefined") {
+      const sessionId = createSessionId();
+      window.localStorage.setItem(STORAGE_KEY, sessionId);
+    }
     dispatch({ type: "RESET_CHAT" });
   }
 

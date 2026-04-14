@@ -1,150 +1,214 @@
 export const quickActions = [
-  {
-    icon: "rocket",
-    label: "Getting Started",
-    value: "Getting started",
-  },
-  {
-    icon: "plans",
-    label: "Plans & Features",
-    value: "Plans and features",
-  },
-  {
-    icon: "billing",
-    label: "Account Management",
-    value: "Account management",
-  },
-  {
-    icon: "support",
-    label: "Technical Support",
-    value: "Technical support",
-  },
-  {
-    icon: "shield",
-    label: "Protection & Add-Ons",
-    value: "Protection & Add-Ons",
-  },
-  {
-    icon: "business",
-    label: "Business Solutions",
-    value: "Business solutions",
-  },
+  { icon: "mobile", label: "1 Mobile plans (EE network)", value: "1 Mobile plans (EE network)" },
+  { icon: "broadband", label: "2 Home broadband", value: "2 Home broadband" },
+  { icon: "landline", label: "3 Landlines & Business solutions", value: "3 Landlines & Business solutions" },
+  { icon: "support", label: "4 Already a customer - need support", value: "4 Already a customer - need support" },
+  { icon: "other", label: "5 Something else", value: "5 Something else" }
 ];
 
 export const featureTags = [
-  "Activate",
-  "International",
-  "Student discount",
-  "Special offers",
-  "Network status",
-  "Track order",
-  "Business plans",
-  "Device protection",
-  "FAQ",
+  "Traditional SIM",
+  "eSIM",
+  "IoT SIMs",
+  "Billing question",
+  "Equipment & Phone accessories",
+  "Becoming a reseller",
+  "Speak to an Agent"
 ];
 
 export const starterSuggestions = [
-  "\u{1F50D} Exploring plans",
-  "\u{1F4F1} Bringing your own phone",
-  "\u{1F504} Switching from another carrier",
-  "\u{2753} Something else",
+  "1 Mobile plans (EE network)",
+  "2 Home broadband",
+  "3 Landlines & Business solutions",
+  "4 Already a customer - need support",
+  "5 Something else"
 ];
 
 export const welcomeTiles = [
   {
-    title: "Getting Started",
-    subtitle: "Overview, plan selection, activation, switching",
-    value: "Getting started",
-    icon: "rocket",
+    title: "1 Mobile plans (EE network)",
+    subtitle: "SIM-only deals, eSIM guidance, usage tiers, and contract-length routing",
+    value: "1 Mobile plans (EE network)",
+    icon: "mobile"
   },
   {
-    title: "Plans & Features",
-    subtitle: "Prepaid, postpaid, family, travel, discounts",
-    value: "Plans and features",
-    icon: "plans",
+    title: "2 Home broadband",
+    subtitle: "BT broadband help for basics, all-rounder, or super-fast households",
+    value: "2 Home broadband",
+    icon: "broadband"
   },
   {
-    title: "Account Management",
-    subtitle: "Login, billing, top-up, order tracking",
-    value: "Account management",
-    icon: "billing",
+    title: "3 Landlines & Business solutions",
+    subtitle: "Home landlines, business lines, staff mobile plans, and IoT connectivity",
+    value: "3 Landlines & Business solutions",
+    icon: "landline"
   },
   {
-    title: "Technical Support",
-    subtitle: "Connection issues, compatibility, SIM help",
-    value: "Technical support",
-    icon: "support",
+    title: "4 Already a customer - need support",
+    subtitle: "Technical help, billing guidance, order status, and plan changes",
+    value: "4 Already a customer - need support",
+    icon: "support"
   },
   {
-    title: "Protection & Add-Ons",
-    subtitle: "Device protection, extra services, add-ons",
-    value: "Protection & Add-Ons",
-    icon: "shield",
-  },
-  {
-    title: "Business Solutions",
-    subtitle: "Business plans, multi-line management, sales",
-    value: "Business solutions",
-    icon: "business",
-  },
+    title: "5 Something else",
+    subtitle: "About Zoiko, reseller enquiries, coverage, and equipment questions",
+    value: "5 Something else",
+    icon: "other"
+  }
 ];
 
 export const mobileActions = [
-  "Activate",
-  "Technical support",
-  "Special offers",
-  "Student discount",
-  "Business plans",
+  "1 Mobile plans (EE network)",
+  "2 Home broadband",
+  "3 Landlines & Business solutions",
+  "4 Already a customer - need support",
+  "Speak to an Agent"
 ];
 
 export const popularSearches = [
-  { label: "Prepaid plans", value: "prepaid" },
-  { label: "Activate SIM", value: "activate" },
-  { label: "Switch carriers", value: "switch" },
-  { label: "Student discount", value: "student discount" },
-  { label: "Family plans", value: "family" },
-  { label: "International calling", value: "international" },
-  { label: "Business plans", value: "business plans" },
-  { label: "Special offers", value: "special offers" },
+  { label: "Mobile plans", value: "1 Mobile plans (EE network)" },
+  { label: "Home broadband", value: "2 Home broadband" },
+  { label: "Landlines & business solutions", value: "3 Landlines & Business solutions" },
+  { label: "Need support", value: "4 Already a customer - need support" },
+  { label: "Something else", value: "5 Something else" },
+  { label: "Speak to an agent", value: "Speak to an Agent" }
 ];
 
-export const searchSuggestionGroups = {
-  act: [
-    { label: "Activate SIM", value: "activate" },
-    { label: "Activation help", value: "Activation help" },
-    { label: "Activate login", value: "login" },
-  ],
-  bus: [
-    { label: "Business plans", value: "business plans" },
-    { label: "Business solutions", value: "business solutions" },
-    { label: "Business sales", value: "business plans" },
-  ],
-  fam: [
-    { label: "Family plans", value: "family" },
-    { label: "Family & multi-line plans", value: "search family" },
-  ],
-  int: [
-    { label: "International calling", value: "international" },
-    { label: "International roaming", value: "International roaming" },
-    { label: "International travel plans", value: "travel" },
-  ],
-  stu: [
-    { label: "Student discount", value: "student discount" },
-    { label: "Student verification", value: "student discount" },
-  ],
-  sim: [
-    { label: "SIM card help", value: "sim card help" },
-    { label: "Activate SIM", value: "activate" },
-    { label: "SIM not recognized", value: "sim not recognized" },
-  ],
-  sup: [
-    { label: "Technical support", value: "technical support" },
-    { label: "Supported devices", value: "supported devices" },
-    { label: "Device compatibility", value: "device compatibility" },
-  ],
-  swi: [
-    { label: "Switch carriers", value: "switch" },
-    { label: "Keep my number", value: "keep my number" },
-    { label: "Switch and save", value: "switch" },
-  ],
-};
+export const searchKeywordCatalog = [
+  {
+    id: "mobile-plans",
+    label: "EE Mobile Plans - Experience unparalleled connectivity",
+    value: "1 Mobile plans (EE network)",
+    url: "https://zoikotelecom.com/ee-mobile-plans/",
+    highlight: "EE Mobile Plans",
+    keywords: ["mobile", "mobile plan", "sim", "phone"]
+  },
+  {
+    id: "mobile-faqs",
+    label: "Mobile FAQs - Common questions about our mobile services",
+    value: "1 Mobile plans (EE network)",
+    url: "https://zoikotelecom.com/faqs/ee-sim-deals-faqs/",
+    highlight: "Mobile FAQs",
+    keywords: ["mobile", "mobile plan", "sim", "phone"]
+  },
+  {
+    id: "broadband",
+    label: "High-Speed Broadband - Reliable connectivity from BT",
+    value: "2 Home broadband",
+    url: "https://zoikotelecom.com/bt-broadband/",
+    highlight: "High-Speed Broadband",
+    keywords: ["broadband", "internet", "wifi"]
+  },
+  {
+    id: "business-landline",
+    label: "Business Landline Service - Scalable communication and cost reduction",
+    value: "3 Landlines & Business solutions",
+    url: "https://zoikotelecom.com/landline-business/",
+    highlight: "Business Landline Service",
+    keywords: ["landline", "voip", "office phone"]
+  },
+  {
+    id: "home-landlines",
+    label: "Home Landlines - Professional home office setups",
+    value: "3 Landlines & Business solutions",
+    url: "https://zoikotelecom.com/landlines/",
+    highlight: "Home Landlines",
+    keywords: ["landline", "voip", "office phone"]
+  },
+  {
+    id: "business",
+    label: "Business Solutions Overview - All our business services",
+    value: "3 Landlines & Business solutions",
+    url: "https://zoikotelecom.com/business-solutions/",
+    highlight: "Business Solutions Overview",
+    keywords: ["business", "solutions"]
+  },
+  {
+    id: "landline-business",
+    label: "Landline for Business",
+    value: "3 Landlines & Business solutions",
+    url: "https://zoikotelecom.com/landline-business/",
+    highlight: "Landline for Business",
+    keywords: ["business", "solutions"]
+  },
+  {
+    id: "accessories",
+    label: "Accessories - Professional phone accessories",
+    value: "Equipment & Phone accessories",
+    url: "https://zoikotelecom.com/accessories/",
+    highlight: "Accessories",
+    keywords: ["accessories", "headset", "equipment"]
+  },
+  {
+    id: "equipment",
+    label: "Phone Equipment - Hardware for your setup",
+    value: "Equipment & Phone accessories",
+    url: "https://zoikotelecom.com/phone-equipment/",
+    highlight: "Phone Equipment",
+    keywords: ["accessories", "headset", "equipment"]
+  },
+  {
+    id: "about",
+    label: "About Zoiko Telecom - Our mission and offices",
+    value: "Our company / who we are",
+    url: "https://zoikotelecom.com/about-us/",
+    highlight: "About Zoiko Telecom",
+    keywords: ["about", "who are you"]
+  },
+  {
+    id: "price-mobile",
+    label: "Mobile Plans",
+    value: "price",
+    url: "https://zoikotelecom.com/ee-mobile-plans/",
+    highlight: "Mobile Plans",
+    keywords: ["price", "cost", "how much"]
+  },
+  {
+    id: "price-broadband",
+    label: "Broadband",
+    value: "price",
+    url: "https://zoikotelecom.com/bt-broadband/",
+    highlight: "Broadband",
+    keywords: ["price", "cost", "how much"]
+  },
+  {
+    id: "price-landline",
+    label: "Landline Business",
+    value: "price",
+    url: "https://zoikotelecom.com/landline-business/",
+    highlight: "Landline Business",
+    keywords: ["price", "cost", "how much"]
+  },
+  {
+    id: "roaming",
+    label: "Mobile Plans - All plans include EU roaming",
+    value: "1 Mobile plans (EE network)",
+    url: "https://zoikotelecom.com/ee-mobile-plans/",
+    highlight: "EU Roaming",
+    keywords: ["roaming", "abroad", "eu"]
+  },
+  {
+    id: "reseller",
+    label: "Become a Reseller - Partner with Zoiko Telecom",
+    value: "Becoming a reseller",
+    url: "https://zoikotelecom.com/become-a-reseller/",
+    highlight: "Become a Reseller",
+    keywords: ["reseller", "partner"]
+  },
+  {
+    id: "home",
+    label: "Zoiko Telecom Home",
+    value: "1 Mobile plans (EE network)",
+    url: "https://zoikotelecom.com/",
+    highlight: "Zoiko Telecom Home",
+    keywords: ["home", "start"]
+  },
+  {
+    id: "support",
+    label: "Support and contact options",
+    value: "4 Already a customer - need support",
+    url: "https://zoikotelecom.com/",
+    highlight: "Support options",
+    keywords: ["agent", "help", "support", "human"]
+  }
+];

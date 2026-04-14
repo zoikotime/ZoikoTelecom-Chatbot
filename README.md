@@ -1,18 +1,21 @@
-# Node-driveX-chatbot
+# Zoiko Telecom Chatbot
 
-A MERN-style rebuild of the original `driverX-chatbot`:
+A multi-channel support and conversion chatbot for Zoiko Telecom, based on the Zoiko technical specification and conversation flow documents.
 
 - Backend: Node.js + Express
 - Frontend: React + Vite
-- Database: MongoDB + Mongoose
+- Database: MongoDB + Mongoose (optional)
+- Assistant persona: Zakko
 
-The chatbot content and intent behavior are carried over from the original `driverX-chatbot/data/knowledge.json`.
+## What It Covers
 
-## Project Structure
-
-- `backend/` - Express API and MongoDB integration
-- `frontend/` - React chatbot UI
-- `data/knowledge.json` - copied DriverX knowledge base
+- Mobile plans on the EE network
+- Broadband availability on the BT network
+- Business landlines and digital voice
+- Business solutions and infrastructure
+- Phones, accessories, and reseller journeys
+- Fallback handling and agent escalation
+- Session-aware intent memory and lightweight analytics logging
 
 ## Backend Setup
 
@@ -23,43 +26,26 @@ copy .env.example .env
 npm run dev
 ```
 
-Default backend URL:
-
-- `http://localhost:5000`
-
 ## Frontend Setup
 
 ```bash
 cd frontend
 npm install
-copy .env.example .env
 npm run dev
 ```
 
-Default frontend URL:
-
-- `http://localhost:5173`
-
-## MongoDB
-
-By default the backend uses:
+## Environment
 
 ```env
-MONGO_URI=mongodb://127.0.0.1:27017/driverx_chatbot
+PORT=5000
+CLIENT_ORIGIN=http://localhost:5173
+MONGODB_URI=mongodb://127.0.0.1:27017/zoiko_chatbot
 ```
 
-On first run, the backend seeds MongoDB from `data/knowledge.json` if the collection is empty.
+If MongoDB is not available, the app still works by reading from `data/knowledge.json`.
 
-## Production Build
+## API
 
-```bash
-cd frontend
-npm install
-npm run build
-
-cd ..\backend
-npm install
-npm start
-```
-
-If `frontend/dist` exists, the Express server will serve it automatically.
+- GET /api/health
+- POST /api/chat
+- GET /api/analytics

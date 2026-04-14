@@ -13,9 +13,13 @@ const intentSchema = new mongoose.Schema(
 const knowledgeBaseSchema = new mongoose.Schema(
   {
     key: { type: String, required: true, unique: true },
-    fallback: { type: String, default: "Could you share a bit more detail?" },
+    assistantName: { type: String, default: "Zakko" },
+    fallback: { type: String, default: "I did not quite understand that. Please select an option below." },
+    secondFallback: { type: String, default: "I will connect you to an agent for further assistance." },
+    agentMessage: { type: String, default: "I understand - speaking to an agent is the fastest way to resolve this." },
     defaultSuggestions: { type: [String], default: [] },
     intents: { type: [intentSchema], default: [] },
+    urls: { type: mongoose.Schema.Types.Mixed, default: {} }
   },
   {
     timestamps: true,

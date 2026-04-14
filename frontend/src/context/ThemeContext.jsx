@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-const STORAGE_KEY = "golite-theme";
+const STORAGE_KEY = "zoiko-theme";
 const ThemeContext = createContext(null);
 
 function getInitialTheme() {

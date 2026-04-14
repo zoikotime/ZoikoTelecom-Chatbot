@@ -27,7 +27,6 @@ app.use(
 );
 
 app.use(express.json());
-
 app.use("/api", chatRoutes);
 
 const frontendDist = path.resolve(__dirname, "..", "..", "frontend", "dist");
@@ -45,7 +44,7 @@ if (fs.existsSync(frontendDist)) {
 const PORT = Number(process.env.PORT || 5000);
 
 const server = app.listen(PORT, () => {
-  console.log(`GoLite backend running on http://localhost:${PORT}`);
+  console.log(`Zoiko Telecom backend running on http://localhost:${PORT}`);
 });
 
 server.on("error", (error) => {

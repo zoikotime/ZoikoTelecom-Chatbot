@@ -3,42 +3,42 @@
 
 :root {
   color-scheme: light;
-  --color-shell: 244 249 255;
+  --color-shell: 243 249 246;
   --color-panel: 255 255 255;
   --color-card: 255 255 255;
-  --color-border: 190 220 244;
-  --color-ink: 15 23 42;
-  --color-muted: 91 112 131;
-  --color-accent: 14 165 233;
-  --color-accent-deep: 3 105 161;
-  --color-bubble-bot: 240 249 255;
-  --color-bubble-user: 14 116 144;
-  --color-warning: 244 114 182;
-  --shadow-panel: 0 24px 80px rgba(15, 23, 42, 0.12);
+  --color-border: 191 219 206;
+  --color-ink: 12 28 22;
+  --color-muted: 95 118 109;
+  --color-accent: 0 208 132;
+  --color-accent-deep: 0 120 92;
+  --color-bubble-bot: 241 253 247;
+  --color-bubble-user: 10 111 86;
+  --color-warning: 255 166 77;
+  --shadow-panel: 0 28px 80px rgba(12, 28, 22, 0.12);
   --bg-dashboard:
-    radial-gradient(circle at top left, rgba(125, 211, 252, 0.45), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(251, 113, 133, 0.22), transparent 26%),
-    linear-gradient(135deg, #edf7ff 0%, #f8fbff 38%, #fff4f6 100%);
+    radial-gradient(circle at top left, rgba(0, 208, 132, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(0, 120, 92, 0.14), transparent 26%),
+    linear-gradient(140deg, #eff8f3 0%, #f6fcf9 40%, #edf7ff 100%);
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --color-shell: 5 10 20;
-  --color-panel: 10 18 31;
-  --color-card: 16 27 44;
-  --color-border: 50 77 108;
-  --color-ink: 233 244 255;
-  --color-muted: 145 173 201;
-  --color-accent: 56 189 248;
-  --color-accent-deep: 14 116 144;
-  --color-bubble-bot: 13 30 47;
-  --color-bubble-user: 3 105 161;
-  --color-warning: 251 113 133;
-  --shadow-panel: 0 28px 90px rgba(2, 8, 23, 0.45);
+  --color-shell: 6 17 15;
+  --color-panel: 10 24 20;
+  --color-card: 15 33 28;
+  --color-border: 44 82 67;
+  --color-ink: 231 247 239;
+  --color-muted: 152 187 171;
+  --color-accent: 41 214 151;
+  --color-accent-deep: 0 140 105;
+  --color-bubble-bot: 12 31 25;
+  --color-bubble-user: 0 120 92;
+  --color-warning: 255 179 71;
+  --shadow-panel: 0 28px 90px rgba(0, 0, 0, 0.4);
   --bg-dashboard:
-    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(251, 113, 133, 0.16), transparent 24%),
-    linear-gradient(145deg, #040816 0%, #08111f 45%, #151127 100%);
+    radial-gradient(circle at top left, rgba(41, 214, 151, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(0, 120, 92, 0.18), transparent 26%),
+    linear-gradient(145deg, #071310 0%, #0b1d18 42%, #0a1621 100%);
 }
 
 html,
@@ -64,8 +64,17 @@ input {
   font: inherit;
 }
 
+textarea {
+  field-sizing: content;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
 a {
-  color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .scrollbar-slim::-webkit-scrollbar {
@@ -74,6 +83,6 @@ a {
 }
 
 .scrollbar-slim::-webkit-scrollbar-thumb {
-  background: rgba(122, 143, 166, 0.3);
+  background: rgba(95, 118, 109, 0.35);
   border-radius: 9999px;
 }

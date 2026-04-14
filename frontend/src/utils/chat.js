@@ -1,51 +1,41 @@
-﻿const linkLabels = {
-  "https://golitemobile.com/activate-sim/": "👉 Activate SIM",
-  "https://golitemobile.com/byod/": "👉 Bring your own phone",
-  "https://golitemobile.com/switch-and-save/": "👉 Switch and save",
-  "https://golitemobile.com/login/": "👉 Account login",
-  "https://golitemobile.com/help-and-support/": "👉 Help center",
-  "https://golitemobile.com/track-order/": "👉 Track order",
-  "https://golitemobile.com/network-status/": "👉 Network status",
-  "https://golitemobile.com/lost-sim/": "👉 Lost SIM help",
-  "https://golitemobile.com/device-protection/": "👉 Device protection",
-  "https://golitemobile.com/business/": "👉 Business plans",
-  "https://golitemobile.com/international-calls/": "👉 International calling",
-  "https://golitemobile.com/travel-plans/": "👉 Travel plans",
-  "https://golitemobile.com/international-roaming/": "👉 International roaming",
-  "https://golitemobile.com/prepaid-plans/": "👉 Prepaid plan",
-  "https://golitemobile.com/plans/postpaid-plans/": "👉 Postpaid plan",
-  "https://golitemobile.com/plans-features-overview/": "👉 Plans overview",
-  "https://golitemobile.com/top-up/": "👉 Top-up plan",
-  "https://golitemobile.com/streaming-enthusiasts-plans/": "👉 Streaming plans",
-  "https://golitemobile.com/shop-family-multi-line-plans/": "👉 Family plans",
-  "https://golitemobile.com/special-offers-promotions/": "👉 Special offers",
-  "https://golitemobile.com/military-discount-eligibility-form/":
-    "👉 Military discount",
-  "https://golitemobile.com/students-discount-application/":
-    "👉 Student discount",
-  "https://golitemobile.com/first-responder-discount-application/":
-    "👉 First responder discount",
-  "https://golitemobile.com/senior-citizen-discount-enrollment-form/":
-    "👉 Senior discount",
-  "https://golitemobile.com/about-us/": "👉 About GoLite",
+const linkLabels = {
+  "https://zoikotelecom.com/ee-mobile-plans/": "EE Mobile Plans",
+  "https://zoikotelecom.com/faqs/ee-sim-deals-faqs/": "Mobile FAQs",
+  "https://zoikotelecom.com/bt-broadband/": "High-Speed Broadband",
+  "https://zoikotelecom.com/landlines/": "Home Landlines",
+  "https://zoikotelecom.com/landline-business/": "Business Landline Service",
+  "https://zoikotelecom.com/business-solutions/": "Business Solutions Overview",
+  "https://zoikotelecom.com/phone-equipment/": "Phone Equipment",
+  "https://zoikotelecom.com/accessories/": "Accessories",
+  "https://zoikotelecom.com/become-a-reseller/": "Become a Reseller",
+  "https://zoikotelecom.com/about-us/": "About Zoiko Telecom",
+  "https://zoikotelecom.com/contact-us/": "Contact Zoiko Telecom",
+  "https://zoikotelecom.com/": "Zoiko Telecom Home"
 };
 
+const URL_UTM = "utm_source=chatbot&utm_medium=website_chat&utm_campaign=zoiko_assistant";
+
+export function withTrackedUrl(url) {
+  if (!url) {
+    return url;
+  }
+
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}${URL_UTM}`;
+}
+
 function resolveLinkLabel(url) {
-  return (
-    linkLabels[url] ||
-    linkLabels[url.replace(/\/$/, "")] ||
-    linkLabels[`${url}/`] ||
-    "👉 Open GoLite page"
-  );
+  const [baseUrl] = url.split("?");
+  return linkLabels[baseUrl] || linkLabels[baseUrl.replace(/\/$/, "")] || "Open Zoiko Telecom";
 }
 
 function formatLinks(text) {
-  return text.replace(/https:\/\/golitemobile\.com\/[^\s<]+/g, (url) => {
+  return text.replace(/https:\/\/zoikotelecom\.com\/[^\s<]+/g, (url) => {
     const cleanUrl = url.replace(/[.,!?)]$/, "");
     const trailing = url.slice(cleanUrl.length);
+    const trackedUrl = withTrackedUrl(cleanUrl);
     const label = resolveLinkLabel(cleanUrl);
-
-    return `<a href="${cleanUrl}" target="_blank" rel="noreferrer" class="font-medium text-[#f5c518] no-underline transition hover:underline">${label}</a>${trailing}`;
+    return `<a href="${trackedUrl}" target="_blank" rel="noreferrer" class="font-medium text-[#00d084] no-underline transition hover:underline">${label}</a>${trailing}`;
   });
 }
 
@@ -55,35 +45,44 @@ export function formatMessage(text) {
 }
 
 const suggestionLabels = {
-  "\u{1F50D} Exploring plans": "\u{1F50D} Exploring plans",
-  "\u{1F4F1} Bringing your own phone": "\u{1F4F1} Bringing your own phone",
-  "\u{1F504} Switching from another carrier":
-    "\u{1F504} Switching from another carrier",
-  "\u{2753} Something else": "\u{2753} Something else",
-  "Exploring plans": "\u{1F50D} Exploring plans",
-  "Bring your own phone": "\u{1F4F1} Bringing your own phone",
-  "Switch carriers": "\u{1F504} Switching from another carrier",
-  "Something else": "\u{2753} Something else",
-  "Activation help": "\u{1F4F6} Activation help",
-  "Account & billing": "\u{1F4B3} Account & billing",
-  "Technical issues": "\u{1F6E0} Technical issues",
-  "Help and support": "\u{1F4AC} Help and support",
-  "Getting started": "\u{1F680} Getting started",
-  "Plans and features": "\u{1F4CB} Plans & features",
-  "Account management": "\u{1F464} Account management",
-  "Technical support": "\u{1F6E0} Technical support",
-  "Business solutions": "\u{1F4BC} Business solutions",
-  "Protection & Add-Ons": "\u{1F6E1} Protection & Add-Ons",
-  "Business plans": "\u{1F4BC} Business plans",
-  "Special offers": "\u{1F3F7} Special offers",
-  "Student discount": "\u{1F393} Student discount",
-  Activate: "\u{1F50E} Activate",
-  International: "\u{1F30D} International",
-  FAQ: "\u{2753} FAQ",
+  "1 Mobile plans (EE network)": "1 Mobile plans",
+  "2 Home broadband": "2 Home broadband",
+  "3 Landlines & Business solutions": "3 Landlines & Business solutions",
+  "4 Already a customer - need support": "4 Need support",
+  "5 Something else": "5 Something else",
+  "Speak to an Agent": "Speak to an Agent",
+  "Back to Main Menu": "Back to Main Menu",
+  "Traditional SIM": "Traditional SIM",
+  "eSIM": "eSIM",
+  "Not sure what the difference is": "SIM vs eSIM",
+  "Light user (10-20GB)": "Light user",
+  "Moderate user (50-100GB)": "Moderate user",
+  "Heavy user (150GB+)": "Heavy user",
+  "I'm not sure": "I'm not sure",
+  "30-day rolling": "30-day rolling",
+  "12-month contract": "12-month contract",
+  "24-month contract": "24-month contract",
+  "Just need the basics": "Just need the basics",
+  "Good all-rounder": "Good all-rounder",
+  "Super fast": "Super fast",
+  "Help me choose!": "Help me choose",
+  "Landlines (Home or Business)": "Landlines",
+  "IoT SIMs": "IoT SIMs",
+  "Mobile plans for staff": "Plans for staff",
+  "Business Solutions": "Business Solutions",
+  "Multiple services / not sure": "Multiple services",
+  "Billing question": "Billing question",
+  "Equipment & Phone accessories": "Equipment & accessories",
+  "Becoming a reseller": "Becoming a reseller",
+  "Connect Me to an Agent": "Connect to Agent"
 };
 
 export function formatSuggestionLabel(label) {
   return suggestionLabels[label] || label;
+}
+
+export function createSessionId() {
+  return `zoiko-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 }
 
 export function timeStampLabel() {
