@@ -47,47 +47,49 @@ export function ChatInput() {
   }, [input]);
 
   return (
-    <div className="border-t border-border bg-panel/92 px-3 pb-[calc(env(safe-area-inset-bottom)+0.9rem)] pt-3 sm:px-4 lg:px-6">
+    <div className="border-t border-border bg-panel/92 px-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] pt-2.5 sm:px-4 sm:pb-[calc(env(safe-area-inset-bottom)+0.9rem)] sm:pt-3 lg:px-6">
       <div className="mx-auto w-full max-w-6xl">
-        <div className="rounded-[22px] border border-border bg-card/70 p-3 shadow-panel">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
+        {/* Input box */}
+        <div className="rounded-[18px] border border-border bg-card/70 p-2.5 shadow-panel sm:rounded-[22px] sm:p-3">
+          <div className="flex items-end gap-2 sm:gap-3">
             <textarea
               ref={textareaRef}
               value={input}
               rows={1}
-              placeholder="Ask about mobile plans, broadband, landlines, support, reseller, pricing, or coverage..."
+              placeholder="Ask about plans, broadband, support…"
               onChange={(event) => setInput(event.target.value)}
               onKeyDown={handleInputKeyDown}
-              className="min-h-[44px] max-h-[140px] flex-1 resize-none bg-transparent px-2 py-2 text-sm text-ink outline-hidden placeholder:text-muted"
+              className="min-h-[40px] max-h-[120px] flex-1 resize-none bg-transparent px-1.5 py-1.5 text-sm text-ink outline-hidden placeholder:text-muted sm:min-h-[44px] sm:max-h-[140px] sm:px-2 sm:py-2"
             />
             <button
               type="button"
               onClick={() => sendMessage()}
-              className="min-h-11 w-full rounded-full bg-linear-to-br from-accentDeep to-accent px-5 py-3 text-sm font-semibold text-white transition hover:brightness-110 sm:w-auto"
+              className="shrink-0 rounded-full bg-linear-to-br from-accentDeep to-accent px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-110 sm:px-5 sm:py-3"
             >
               Send
             </button>
           </div>
         </div>
 
-        <div className="mt-3">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted">
-            {hasAutocomplete ? "Auto-Fill Search Keywords" : "Top Searches"}
+        {/* Suggestions */}
+        <div className="mt-2.5 sm:mt-3">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted sm:text-[11px] sm:tracking-[0.22em]">
+            {hasAutocomplete ? "Auto-Fill" : "Top Searches"}
           </p>
-          <div className="mt-2 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:flex-wrap sm:overflow-visible">
+          {/* Pill container: scrollable on xs, wraps on sm+ */}
+          <div className="mt-1.5 flex gap-1.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-2 sm:flex-wrap sm:gap-2 sm:overflow-visible sm:pb-0">
             {(hasAutocomplete ? suggestionOptions : popularSearches).map((item) => (
               <button
                 key={`${item.label}-${item.value}`}
                 type="button"
                 onClick={() => sendMessage(item.value)}
-                className="shrink-0 whitespace-nowrap rounded-full border border-accent/30 bg-accent/10 px-3 py-1.5 text-xs font-medium text-accent transition hover:bg-accent/20"
+                className="inline-flex h-7 shrink-0 items-center whitespace-nowrap rounded-full border border-accent/35 bg-accent/10 px-3 text-[11px] font-medium leading-none text-accent transition hover:bg-accent/20 active:scale-95"
               >
                 {item.label}
               </button>
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ export const featureTags = [
   "eSIM",
   "IoT SIMs",
   "Billing question",
-  "Equipment & Phone accessories",
+  "Phone accessories",
   "Becoming a reseller",
   "Speak to an Agent"
 ];

@@ -15,7 +15,8 @@ async function getHealth(_req, res) {
       status: "ok",
       service: "zoiko-chatbot-api",
       assistant: knowledge.assistantName || "Zakko",
-      database: mongoose.connection.readyState === 1 ? "connected" : "disconnected",
+      database:
+        mongoose.connection.readyState === 1 ? "connected" : "disconnected",
       intent_count: (knowledge.intents || []).length,
     });
   } catch (error) {

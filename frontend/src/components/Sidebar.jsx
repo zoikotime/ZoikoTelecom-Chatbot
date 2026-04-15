@@ -11,10 +11,10 @@ const actionBadges = {
 
 const featureBadges = {
   "Traditional SIM": "SIM",
-  "eSIM": "eSIM",
+  eSIM: "eSIM",
   "IoT SIMs": "IoT",
   "Billing question": "GBP",
-  "Equipment & Phone accessories": "EQ",
+  "Phone accessories": "EQ",
   "Becoming a reseller": "RS",
   "Speak to an Agent": "A",
 };
@@ -42,8 +42,10 @@ export function Sidebar() {
       <div className="border-b border-border bg-[linear-gradient(155deg,rgba(0,208,132,0.18)_0%,rgba(255,255,255,0.08)_42%,rgba(18,55,42,0.28)_100%)] px-5 pb-4 pt-6">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent/80">Zoiko Telecom</div>
-            <h2 className="mt-2 font-display text-2xl font-bold text-ink">Zakko</h2>
+            <img src="./logo.png" alt="Zoiko Logo" className="w-38.5 h-15" />
+            <h2 className="mt-2 font-display text-2xl font-bold text-ink">
+              Zakko
+            </h2>
           </div>
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-card/70 px-3 py-1.5 text-xs font-medium text-accent">
             <span className="h-2 w-2 rounded-full bg-accent animate-pulseSoft" />
@@ -52,22 +54,31 @@ export function Sidebar() {
         </div>
 
         <p className="mt-3 text-sm leading-6 text-ink/80">
-          Final-flow navigation for mobile, broadband, landlines, support, and general Zoiko enquiries.
+          Final-flow navigation for mobile, broadband, landlines, support, and
+          general Zoiko enquiries.
         </p>
       </div>
 
       <div className="scrollbar-slim flex-1 overflow-y-auto px-5 py-4">
         <div>
-          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-muted">Main Services</p>
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-muted">
+            Main Services
+          </p>
           <div className="space-y-2">
             {quickActions.map((action) => (
-              <SidebarAction key={action.label} action={action} onAction={sendMessage} />
+              <SidebarAction
+                key={action.label}
+                action={action}
+                onAction={sendMessage}
+              />
             ))}
           </div>
         </div>
 
         <div className="mt-6">
-          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-muted">Fast Topics</p>
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-muted">
+            Fast Topics
+          </p>
           <div className="flex flex-wrap gap-2">
             {featureTags.map((tag) => (
               <button

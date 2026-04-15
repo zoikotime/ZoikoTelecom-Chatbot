@@ -6,38 +6,42 @@ export function ChatHeader() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="flex flex-col gap-3 border-b border-border bg-panel/92 px-4 py-3 backdrop-blur lg:flex-row lg:items-center lg:justify-between lg:px-6">
-      <div className="flex min-w-0 items-center gap-3">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[18px] border border-accent/25 bg-card/80 font-display text-lg font-bold text-accent shadow-[0_14px_34px_rgba(0,208,132,0.16)]">
-          Z
+    <header className="flex items-center justify-between gap-2 border-b border-border bg-panel/92 px-3 py-2.5 backdrop-blur sm:px-4 sm:py-3 lg:px-6">
+      {/* Brand */}
+      <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[14px] border border-accent/25 bg-card/80 font-display text-base font-bold text-accent shadow-[0_10px_26px_rgba(0,208,132,0.16)] sm:h-11 sm:w-11 sm:rounded-[18px]">
+          <img src="./logo.png" alt="Zoiko Logo" className="h-full w-full object-contain" />
         </div>
         <div className="min-w-0">
-          <h1 className="truncate font-display text-lg font-bold text-ink">Zoiko Telecom Assistant</h1>
-          <p className="line-clamp-2 text-xs leading-5 text-muted">
-            Final customer support flow for mobile, broadband, landlines, support, and general enquiries.
+          <h1 className="truncate font-display text-sm font-bold text-ink sm:text-base lg:text-lg">
+            Zoiko Assistant
+          </h1>
+          <p className="hidden text-[11px] leading-4 text-muted sm:block sm:leading-5">
+            Mobile · Broadband · Landlines · Support
           </p>
         </div>
       </div>
 
-      <div className="flex gap-2 overflow-x-auto pb-0.5 lg:flex-wrap lg:justify-end lg:overflow-visible lg:pb-0">
+      {/* Actions */}
+      <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
         <button
           type="button"
           onClick={toggleTheme}
-          className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-full border border-border bg-card px-4 text-sm text-ink transition hover:border-accent hover:bg-card/80"
+          className="inline-flex h-8 items-center justify-center rounded-full border border-border bg-card px-3 text-xs text-ink transition hover:border-accent hover:bg-card/80 sm:h-9 sm:px-4 sm:text-sm"
         >
           {theme === "light" ? "Dark" : "Light"}
         </button>
         <button
           type="button"
           onClick={() => sendMessage("Speak to an Agent")}
-          className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-full border border-border bg-card px-4 text-sm text-ink transition hover:border-accent hover:bg-card/80"
+          className="inline-flex h-8 items-center justify-center rounded-full border border-border bg-card px-3 text-xs text-ink transition hover:border-accent hover:bg-card/80 sm:h-9 sm:px-4 sm:text-sm"
         >
           Agent
         </button>
         <button
           type="button"
           onClick={clearChat}
-          className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-full border border-border bg-card px-4 text-sm text-ink transition hover:border-accent hover:bg-card/80"
+          className="inline-flex h-8 items-center justify-center rounded-full border border-border bg-card px-3 text-xs text-ink transition hover:border-accent hover:bg-card/80 sm:h-9 sm:px-4 sm:text-sm"
         >
           Clear
         </button>
