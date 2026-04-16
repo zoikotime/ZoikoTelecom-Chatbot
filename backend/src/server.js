@@ -23,11 +23,16 @@ app.use(
   cors({
     origin: [CLIENT_ORIGIN, /localhost:\d+$/],
     methods: ["GET", "POST"],
-  })
+  }),
 );
 
 app.use(express.json());
 app.use("/api", chatRoutes);
+app.use(express.static("public"));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve("public", "index.html"));
+});
 
 const frontendDist = path.resolve(__dirname, "..", "..", "frontend", "dist");
 if (fs.existsSync(frontendDist)) {
@@ -49,7 +54,9 @@ const server = app.listen(PORT, () => {
 
 server.on("error", (error) => {
   if (error.code === "EADDRINUSE") {
-    console.log(`Port ${PORT} is already in use. Change PORT in your backend .env or stop the other server.`);
+    console.log(
+      `Port ${PORT} is already in use. Change PORT in your backend .env or stop the other server.`,
+    );
     return;
   }
 
