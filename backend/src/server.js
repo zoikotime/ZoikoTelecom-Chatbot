@@ -25,32 +25,27 @@ app.use(
 );
 
 app.use(express.json());
-
-// ✅ API routes first — always
 app.use("/api", chatRoutes);
 
-// ✅ Production: serve from Docker public/ folder
+// Static files
 const publicDir = path.resolve("public");
-if (fs.existsSync(publicDir)) {
-  app.use(express.static(publicDir));
-}
-
-// ✅ Dev fallback: serve from frontend/dist if it exists
 const frontendDist = path.resolve(__dirname, "..", "..", "frontend", "dist");
-if (fs.existsSync(frontendDist)) {
-  app.use(express.static(frontendDist));
-}
 
-// ✅ Single wildcard LAST — skips /api routes, serves index.html for everything else
+if (fs.existsSync(publicDir))    app.use(express.static(publicDir));
+if (fs.existsSync(frontendDist)) app.use(express.static(frontendDist));
+
+// ✅ Resolve index.html once at startup — no per-request disk I/O
+const prodIndex = path.resolve(publicDir, "index.html");
+const devIndex  = path.join(frontendDist, "index.html");
+const serveIndex = fs.existsSync(prodIndex)
+  ? prodIndex
+  : fs.existsSync(devIndex)
+  ? devIndex
+  : null;
+
 app.get("*", (req, res, next) => {
   if (req.path.startsWith("/api/")) return next();
-
-  const prodIndex = path.resolve(publicDir, "index.html");
-  const devIndex = path.join(frontendDist, "index.html");
-
-  if (fs.existsSync(prodIndex)) return res.sendFile(prodIndex);
-  if (fs.existsSync(devIndex)) return res.sendFile(devIndex);
-
+  if (serveIndex) return res.sendFile(serveIndex);
   res.status(404).send("Not found");
 });
 
@@ -64,7 +59,8 @@ server.on("error", (error) => {
     console.log(
       `Port ${PORT} is already in use. Change PORT in your backend .env or stop the other server.`,
     );
-    return;
+    process.exit(1);
   }
   console.log("Server failed to start:", error.message);
+  process.exit(1);
 });
