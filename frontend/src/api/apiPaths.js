@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://localhost:8080";
 
 export const apiPaths = {
   chat: `${API_BASE}/api/chat`,
