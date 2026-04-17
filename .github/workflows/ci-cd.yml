@@ -40,7 +40,7 @@ jobs:
       - name: Build frontend
         working-directory: frontend
         env:
-          VITE_API_BASE: ${{ secrets.VITE_API_BASE }}
+          VITE_API_BASE: ""           # empty = same origin, no secret needed
         run: npm run build
 
       - name: Upload frontend build artifact
@@ -70,6 +70,16 @@ jobs:
           sleep 5
           curl --fail http://127.0.0.1:5050/api/health
 
+      - name: Build Docker image
+        run: docker build -t zoiko-telecom-ci -f Dockerfile .
+
+      - name: Smoke test Docker image
+        run: |
+          docker run -d --rm --name zoiko-telecom-ci -p 8080:8080 zoiko-telecom-ci
+          trap "docker stop zoiko-telecom-ci" EXIT
+          sleep 5
+          curl --fail http://127.0.0.1:8080/api/health
+
   cd:
     name: Deploy to Cloud Run
     runs-on: ubuntu-latest
@@ -79,6 +89,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Download frontend artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: zoiko-frontend-dist
+          path: frontend/dist            # Dockerfile copies this into the image
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
@@ -91,39 +107,21 @@ jobs:
       - name: Configure Docker for Artifact Registry
         run: gcloud auth configure-docker europe-west1-docker.pkg.dev
 
-      # ---------- BUILD & PUSH BACKEND IMAGE ----------
-      - name: Build & push backend Docker image
+      # ---------- BUILD & PUSH ----------
+      - name: Build & push Docker image
         run: |
           docker build \
             -t europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/zoiko/backend:${{ github.sha }} \
             -f Dockerfile .
-          docker push europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/zoiko/backend:${{ github.sha }}
+          docker push \
+            europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/zoiko/backend:${{ github.sha }}
 
-      # ---------- DEPLOY BACKEND ----------
-      - name: Deploy backend to Cloud Run
+      # ---------- DEPLOY ----------
+      - name: Deploy to Cloud Run
         run: |
-          gcloud run deploy zoiko-backend \
+          gcloud run deploy zoikotelecombot \
             --image europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/zoiko/backend:${{ github.sha }} \
             --region europe-west1 \
             --platform managed \
             --allow-unauthenticated \
-            --set-env-vars "MONGODB_URI=${{ secrets.MONGODB_URI }},NODE_ENV=production"
-
-      # ---------- BUILD FRONTEND WITH REAL API URL ----------
-      - name: Install frontend dependencies
-        working-directory: frontend
-        run: npm ci
-
-      - name: Build frontend with deployed backend URL
-        working-directory: frontend
-        env:
-          VITE_API_BASE: ${{ secrets.VITE_API_BASE }}
-        run: npm run build
-
-      # ---------- DEPLOY FRONTEND ----------
-      - name: Deploy frontend to Cloud Run
-        uses: google-github-actions/deploy-cloudrun@v2
-        with:
-          service: zoiko-frontend
-          region: europe-west1
-          source: ./frontend
+            --set-env-vars "MONGODB_URI=${{ secrets.MONGODB_URI }},NODE_ENV=production,CLIENT_ORIGIN=https://zoikotelecombot-722985113446.europe-west1.run.app"

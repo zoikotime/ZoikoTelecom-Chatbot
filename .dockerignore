@@ -14,9 +14,6 @@ frontend/package-lock.json
 backend/node_modules
 backend/package-lock.json
 
-# build outputs
-frontend/dist
-
 # OS files
 .DS_Store
 Thumbs.db

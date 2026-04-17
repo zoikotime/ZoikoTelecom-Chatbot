@@ -31,17 +31,17 @@ app.use("/api", chatRoutes);
 const publicDir = path.resolve("public");
 const frontendDist = path.resolve(__dirname, "..", "..", "frontend", "dist");
 
-if (fs.existsSync(publicDir))    app.use(express.static(publicDir));
+if (fs.existsSync(publicDir)) app.use(express.static(publicDir));
 if (fs.existsSync(frontendDist)) app.use(express.static(frontendDist));
 
 // ✅ Resolve index.html once at startup — no per-request disk I/O
 const prodIndex = path.resolve(publicDir, "index.html");
-const devIndex  = path.join(frontendDist, "index.html");
+const devIndex = path.join(frontendDist, "index.html");
 const serveIndex = fs.existsSync(prodIndex)
   ? prodIndex
   : fs.existsSync(devIndex)
-  ? devIndex
-  : null;
+    ? devIndex
+    : null;
 
 app.get("*", (req, res, next) => {
   if (req.path.startsWith("/api/")) return next();
