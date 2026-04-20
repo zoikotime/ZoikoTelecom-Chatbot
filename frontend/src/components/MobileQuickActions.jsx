@@ -13,20 +13,19 @@ export function MobileQuickActions() {
   const { sendMessage } = useChat();
 
   return (
-    <div className="border-b border-border bg-panel/70 px-3 py-2 xl:hidden">
-      {/* Scrollable row on xs; wraps to 2-col grid on sm, 3-col on md */}
-      <div className="flex gap-1.5 overflow-x-auto pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:gap-2 sm:overflow-visible sm:pb-0">
+    <div className="border-b border-border bg-panel/60 px-3 py-2 backdrop-blur xl:hidden sm:px-4">
+      <div className="flex gap-1.5 overflow-x-auto pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:flex-wrap sm:overflow-visible sm:pb-0 sm:gap-2">
         {mobileActions.map((label) => (
           <button
             key={label}
             type="button"
             onClick={() => sendMessage(label)}
-            className="inline-flex min-h-9 min-w-[130px] shrink-0 items-center justify-start gap-2 rounded-xl border border-accent/30 bg-accent/10 px-2.5 py-1.5 text-[11px] font-medium text-accent transition hover:bg-accent/20 sm:min-w-0 sm:min-h-10 sm:rounded-2xl sm:px-3 sm:text-xs"
+            className="inline-flex h-8 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-accent/30 bg-accent/8 px-2.5 text-[11px] font-medium text-accent transition hover:border-accent/55 hover:bg-accent/15 active:scale-95 sm:h-9 sm:px-3 sm:text-xs"
           >
-            <span className="inline-flex min-w-6 h-6 items-center justify-center rounded-full bg-accent/15 px-1.5 text-[10px] font-bold sm:min-w-7 sm:h-7">
-              {actionBadges[label] || "+"}
+            <span className="flex h-4.5 w-4.5 items-center justify-center rounded-full bg-accent/20 text-[9px] font-bold sm:h-5 sm:w-5 sm:text-[10px]">
+              {actionBadges[label] ?? "+"}
             </span>
-            <span className="truncate">{label}</span>
+            <span className="max-w-[120px] truncate sm:max-w-[160px]">{label}</span>
           </button>
         ))}
       </div>

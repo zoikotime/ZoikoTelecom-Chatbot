@@ -8,15 +8,15 @@ export function MessageList() {
   return (
     <section
       ref={messagesRef}
-      className="scrollbar-slim flex-1 overflow-y-auto px-2 py-2.5 sm:px-4 sm:py-4 md:py-5 lg:px-6 xl:px-7"
+      className="scrollbar-slim flex-1 overflow-y-auto px-3 py-3 sm:px-4 sm:py-4 lg:px-6"
     >
-      <div className="mx-auto w-full max-w-6xl 2xl:max-w-[1320px]">
+      <div className="mx-auto w-full max-w-3xl lg:max-w-4xl">
         {messages.map((message) =>
           message.type === "welcome" ? (
             <WelcomeCard key={message.id} time={message.time} />
           ) : (
             <MessageBubble key={message.id} message={message} />
-          ),
+          )
         )}
       </div>
     </section>
