@@ -1,6 +1,6 @@
 const linkLabels = {
   "https://zoikotelecom.com/ee-mobile-plans/": "EE Mobile Plans",
-  "https://zoikotelecom.com/faqs/ee-sim-deals-faqs/": "Mobile FAQs",
+  "https://zoikotelecom.com/faqs/": "Mobile FAQs",
   "https://zoikotelecom.com/bt-broadband/": "High-Speed Broadband",
   "https://zoikotelecom.com/landlines/": "Home Landlines",
   "https://zoikotelecom.com/landline-business/": "Business Landline Service",
@@ -9,11 +9,12 @@ const linkLabels = {
   "https://zoikotelecom.com/accessories/": "Accessories",
   "https://zoikotelecom.com/become-a-reseller/": "Become a Reseller",
   "https://zoikotelecom.com/about-us/": "About Zoiko Telecom",
-  "https://zoikotelecom.com/contact-us/": "Contact Zoiko Telecom",
-  "https://zoikotelecom.com/": "Zoiko Telecom Home"
+  "https://zoikotelecom.com/contact/": "Contact Zoiko Telecom",
+  "https://zoikotelecom.com/": "Zoiko Telecom Home",
 };
 
-const URL_UTM = "utm_source=chatbot&utm_medium=website_chat&utm_campaign=zoiko_assistant";
+const URL_UTM =
+  "utm_source=chatbot&utm_medium=website_chat&utm_campaign=zoiko_assistant";
 
 export function withTrackedUrl(url) {
   if (!url) {
@@ -26,7 +27,11 @@ export function withTrackedUrl(url) {
 
 function resolveLinkLabel(url) {
   const [baseUrl] = url.split("?");
-  return linkLabels[baseUrl] || linkLabels[baseUrl.replace(/\/$/, "")] || "Open Zoiko Telecom";
+  return (
+    linkLabels[baseUrl] ||
+    linkLabels[baseUrl.replace(/\/$/, "")] ||
+    "Open Zoiko Telecom"
+  );
 }
 
 function formatLinks(text) {
@@ -53,7 +58,7 @@ const suggestionLabels = {
   "Speak to an Agent": "Speak to an Agent",
   "Back to Main Menu": "Back to Main Menu",
   "Traditional SIM": "Traditional SIM",
-  "eSIM": "eSIM",
+  eSIM: "eSIM",
   "Not sure what the difference is": "SIM vs eSIM",
   "Light user (10-20GB)": "Light user",
   "Moderate user (50-100GB)": "Moderate user",
@@ -74,7 +79,7 @@ const suggestionLabels = {
   "Billing question": "Billing question",
   "Equipment & Phone accessories": "Equipment & accessories",
   "Becoming a reseller": "Becoming a reseller",
-  "Connect Me to an Agent": "Connect to Agent"
+  "Connect Me to an Agent": "Connect to Agent",
 };
 
 export function formatSuggestionLabel(label) {

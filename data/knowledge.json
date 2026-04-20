@@ -12,7 +12,7 @@
   ],
   "urls": {
     "mobilePlans": "https://zoikotelecom.com/ee-mobile-plans/",
-    "mobileFaqs": "https://zoikotelecom.com/faqs/ee-sim-deals-faqs/",
+    "mobileFaqs": "https://zoikotelecom.com/faqs/",
     "broadband": "https://zoikotelecom.com/bt-broadband/",
     "landlines": "https://zoikotelecom.com/landlines/",
     "landlineBusiness": "https://zoikotelecom.com/landline-business/",
@@ -21,7 +21,7 @@
     "accessories": "https://zoikotelecom.com/accessories/",
     "reseller": "https://zoikotelecom.com/become-a-reseller/",
     "aboutUs": "https://zoikotelecom.com/about-us/",
-    "contactUs": "https://zoikotelecom.com/contact-us/",
+    "contactUs": "https://zoikotelecom.com/contact/",
     "website": "https://zoikotelecom.com/"
   },
   "search_redirects": [
@@ -39,7 +39,7 @@
       "prompt": "Mobile FAQs - Common questions about our mobile services",
       "actionLabel": "Mobile FAQs",
       "intentId": "mobile_intro",
-      "url": "https://zoikotelecom.com/faqs/ee-sim-deals-faqs/"
+      "url": "https://zoikotelecom.com/faqs/"
     },
     {
       "id": "broadband",
@@ -246,7 +246,7 @@
       "keywords": ["moderate user", "50 100gb", "50-100gb"],
       "response": "Based on what you've told me, I'd recommend looking at our Moderate usage plans.\n\nWe've got options on:\n• 30-day rolling contracts (maximum flexibility)\n• 12-month contracts (better value)\n• 24-month contracts (best value long-term)\n\nWhat sounds good to you?",
       "suggestions": [
-        "30-day rolling", 
+        "30-day rolling",
         "12-month contract",
         "24-month contract",
         "Back to Main Menu",

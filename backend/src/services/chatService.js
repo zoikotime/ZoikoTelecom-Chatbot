@@ -11,7 +11,8 @@ const dataPath = path.resolve(
 const SESSION_TIMEOUT_MS = 15 * 60 * 1000;
 const sessions = new Map();
 const analytics = [];
-const URL_UTM = "utm_source=chatbot&utm_medium=website_chat&utm_campaign=zoiko_assistant";
+const URL_UTM =
+  "utm_source=chatbot&utm_medium=website_chat&utm_campaign=zoiko_assistant";
 
 function withTrackedUrl(url) {
   if (!url) {
@@ -90,17 +91,17 @@ const CTA_MAP = {
   },
   "Open contact page": {
     label: "Open contact page",
-    url: withTrackedUrl("https://zoikotelecom.com/contact-us/"),
+    url: withTrackedUrl("https://zoikotelecom.com/contact/"),
     type: "cta",
   },
   "Call support": {
     label: "Call support",
-    url: withTrackedUrl("https://zoikotelecom.com/contact-us/"),
+    url: withTrackedUrl("https://zoikotelecom.com/contact/"),
     type: "cta",
   },
   "Connect Me to an Agent": {
     label: "Connect Me to an Agent",
-    url: withTrackedUrl("https://zoikotelecom.com/contact-us/"),
+    url: withTrackedUrl("https://zoikotelecom.com/contact/"),
     type: "agent",
   },
 };
@@ -401,10 +402,7 @@ function buildSecondFallbackResponse(knowledge, session) {
   return {
     response: knowledge.secondFallback || knowledge.agentMessage,
     suggestions: ["Connect Me to an Agent", "Back to Main Menu"],
-    ctas: [
-      CTA_MAP["Connect Me to an Agent"],
-      CTA_MAP["Open contact page"],
-    ],
+    ctas: [CTA_MAP["Connect Me to an Agent"], CTA_MAP["Open contact page"]],
     matched_intent: "agent",
     escalation: true,
     session: buildSessionPayload(session),
@@ -447,7 +445,9 @@ function findSearchRedirectMatches(query, knowledge) {
 
   return redirects
     .map((redirect) => {
-      const keywords = Array.isArray(redirect.keywords) ? redirect.keywords : [];
+      const keywords = Array.isArray(redirect.keywords)
+        ? redirect.keywords
+        : [];
       const score = keywords.reduce((total, keyword) => {
         const normalizedKeyword = normalizeText(keyword);
         if (!normalizedKeyword) {
@@ -624,9 +624,16 @@ function buildChatResponse(message, knowledge, sessionId) {
     }
   }
 
-  const searchRedirectMatches = findSearchRedirectMatches(normalized, knowledge);
+  const searchRedirectMatches = findSearchRedirectMatches(
+    normalized,
+    knowledge,
+  );
   if (searchRedirectMatches.length > 0) {
-    return buildSearchRedirectResponse(searchRedirectMatches, knowledge, session);
+    return buildSearchRedirectResponse(
+      searchRedirectMatches,
+      knowledge,
+      session,
+    );
   }
 
   let bestMatch = null;
