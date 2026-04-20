@@ -3,7 +3,6 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const fs = require("fs");
-const connectDB = require("./config/db");
 const { seedKnowledgeBase } = require("./services/chatService");
 const chatRoutes = require("./routes/chat.routes");
 
@@ -12,7 +11,6 @@ dotenv.config();
 const app = express();
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:5173";
 
-connectDB();
 seedKnowledgeBase().catch((error) => {
   console.log("Knowledge seed skipped:", error.message);
 });

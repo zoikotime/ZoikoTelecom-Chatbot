@@ -1,26 +1,25 @@
-FROM node:20-bullseye
+FROM node:20-bullseye AS frontend-build
 
-WORKDIR /app
+WORKDIR /app/frontend
+COPY frontend/package*.json ./
+RUN npm ci
+COPY frontend ./
+ENV VITE_API_BASE=""
+RUN npm run build
 
-# Copy backend
-COPY backend/package*.json ./backend/
-RUN cd backend && npm install
+FROM node:20-bullseye AS backend-runtime
 
-COPY backend ./backend
-# ---------- DATA ----------
-COPY data ./backend/data
-
-# Copy prebuilt frontend assets into backend (serve static)
-COPY frontend/dist ./backend/public
-
-# Set working dir to backend
 WORKDIR /app/backend
+COPY backend/package*.json ./
+RUN npm ci --omit=dev
 
-# Default to the Cloud Run / container port unless overridden at runtime
+COPY backend ./
+COPY data ../data
+COPY --from=frontend-build /app/frontend/dist ./public
+
+ENV NODE_ENV=production
 ENV PORT=8080
 
-# Expose port
 EXPOSE 8080
 
-# Start backend
 CMD ["npm", "start"]

@@ -40,17 +40,8 @@ jobs:
       - name: Build frontend
         working-directory: frontend
         env:
-          VITE_API_BASE: ""           # empty = same origin, no secret needed
+          VITE_API_BASE: ""
         run: npm run build
-
-      - name: Upload frontend build artifact
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: actions/upload-artifact@v4
-        with:
-          name: zoiko-frontend-dist
-          path: frontend/dist
-          if-no-files-found: error
-          retention-days: 14
 
       # ---------- BACKEND ----------
       - name: Install backend dependencies
@@ -62,7 +53,6 @@ jobs:
         env:
           PORT: 5050
           CLIENT_ORIGIN: http://localhost:5173
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: |
           node src/server.js &
           SERVER_PID=$!
@@ -89,12 +79,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Download frontend artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: zoiko-frontend-dist
-          path: frontend/dist            # Dockerfile copies this into the image
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
@@ -124,4 +108,4 @@ jobs:
             --region europe-west1 \
             --platform managed \
             --allow-unauthenticated \
-            --set-env-vars "MONGODB_URI=${{ secrets.MONGODB_URI }},NODE_ENV=production,CLIENT_ORIGIN=https://zoikotelecombot-722985113446.europe-west1.run.app"
+            --set-env-vars "NODE_ENV=production,CLIENT_ORIGIN=https://zoikotelecombot-722985113446.europe-west1.run.app"

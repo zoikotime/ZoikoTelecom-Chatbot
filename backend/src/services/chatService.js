@@ -1,10 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const mongoose = require("mongoose");
-
-const KnowledgeBase = require("../models/KnowledgeBase");
-
-const KNOWLEDGE_KEY = "zoiko-default";
 const dataPath = path.resolve(
   __dirname,
   "..",
@@ -293,49 +288,11 @@ function getSession(sessionId) {
 }
 
 async function seedKnowledgeBase() {
-  if (mongoose.connection.readyState !== 1) {
-    return loadKnowledgeFromFile();
-  }
-
-  const fileKnowledge = loadKnowledgeFromFile();
-  const existing = await KnowledgeBase.findOne({ key: KNOWLEDGE_KEY });
-  if (existing) {
-    existing.assistantName = fileKnowledge.assistantName;
-    existing.fallback = fileKnowledge.fallback;
-    existing.secondFallback = fileKnowledge.secondFallback;
-    existing.agentMessage = fileKnowledge.agentMessage;
-    existing.defaultSuggestions = fileKnowledge.defaultSuggestions;
-    existing.intents = fileKnowledge.intents;
-    existing.urls = fileKnowledge.urls;
-    await existing.save();
-    return existing.toObject();
-  }
-
-  const created = await KnowledgeBase.create({
-    key: KNOWLEDGE_KEY,
-    assistantName: fileKnowledge.assistantName,
-    fallback: fileKnowledge.fallback,
-    secondFallback: fileKnowledge.secondFallback,
-    agentMessage: fileKnowledge.agentMessage,
-    defaultSuggestions: fileKnowledge.defaultSuggestions,
-    intents: fileKnowledge.intents,
-    urls: fileKnowledge.urls,
-  });
-
-  return created.toObject();
+  return loadKnowledgeFromFile();
 }
 
 async function getKnowledgeBase() {
-  if (mongoose.connection.readyState !== 1) {
-    return loadKnowledgeFromFile();
-  }
-
-  const knowledge = await KnowledgeBase.findOne({ key: KNOWLEDGE_KEY }).lean();
-  if (knowledge) {
-    return knowledge;
-  }
-
-  return seedKnowledgeBase();
+  return loadKnowledgeFromFile();
 }
 
 function scoreIntent(query, keywords) {

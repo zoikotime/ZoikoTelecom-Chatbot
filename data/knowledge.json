@@ -246,7 +246,7 @@
       "keywords": ["moderate user", "50 100gb", "50-100gb"],
       "response": "Based on what you've told me, I'd recommend looking at our Moderate usage plans.\n\nWe've got options on:\n• 30-day rolling contracts (maximum flexibility)\n• 12-month contracts (better value)\n• 24-month contracts (best value long-term)\n\nWhat sounds good to you?",
       "suggestions": [
-        "30-day rolling",
+        "30-day rolling", 
         "12-month contract",
         "24-month contract",
         "Back to Main Menu",
