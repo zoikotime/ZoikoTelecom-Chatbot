@@ -2,12 +2,20 @@ import { featureTags, quickActions } from "../data/uiConfig";
 import { useChat } from "../hooks/useChat";
 
 const actionBadges = {
-  mobile: "1", broadband: "2", landline: "3", support: "4", other: "5",
+  mobile: "1",
+  broadband: "2",
+  landline: "3",
+  support: "4",
+  other: "5",
 };
 const featureBadges = {
-  "Traditional SIM": "SIM", eSIM: "eSIM", "IoT SIMs": "IoT",
-  "Billing question": "£", "Phone accessories": "EQ",
-  "Becoming a reseller": "RS", "Speak to an Agent": "A",
+  "Traditional SIM": "SIM",
+  eSIM: "eSIM",
+  "IoT SIMs": "IoT",
+  "Billing question": "£",
+  "Phone accessories": "EQ",
+  "Becoming a reseller": "RS",
+  "Speak to an Agent": "A",
 };
 
 function SidebarAction({ action, onAction }) {
@@ -33,7 +41,11 @@ export function Sidebar() {
       {/* Header */}
       <div className="border-b border-border bg-[linear-gradient(155deg,rgba(0,208,132,0.15)_0%,transparent_50%,rgba(18,55,42,0.2)_100%)] px-5 pb-4 pt-5">
         <div className="flex items-center justify-between gap-3">
-          <img src="./logo.png" alt="Zoiko" className="h-10 w-auto object-contain" />
+          <img
+            src="./logo.png"
+            alt="Zoiko"
+            className="h-10 w-auto object-contain"
+          />
           <div className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-card/70 px-2.5 py-1 text-[11px] font-medium text-accent">
             <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulseSoft" />
             Online
@@ -41,7 +53,8 @@ export function Sidebar() {
         </div>
         <h2 className="mt-3 font-display text-xl font-bold text-ink">Zakko</h2>
         <p className="mt-1.5 text-xs leading-5 text-ink/70">
-          Final-flow navigation for mobile, broadband, landlines, support, and general Zoiko enquiries.
+          Final-flow navigation for mobile, broadband, landlines, support, and
+          general Zoiko enquiries.
         </p>
       </div>
 
@@ -52,7 +65,11 @@ export function Sidebar() {
         </p>
         <div className="space-y-1.5">
           {quickActions.map((action) => (
-            <SidebarAction key={action.label} action={action} onAction={sendMessage} />
+            <SidebarAction
+              key={action.label}
+              action={action}
+              onAction={sendMessage}
+            />
           ))}
         </div>
 
@@ -60,15 +77,17 @@ export function Sidebar() {
           <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-widest text-muted">
             Fast Topics
           </p>
-          <div className="flex flex-wrap gap-1.5">
+
+          {/* ONLY CHANGE: flex → grid with 2 columns */}
+          <div className="grid grid-cols-2 gap-1.5">
             {featureTags.map((tag) => (
               <button
                 key={tag}
                 type="button"
                 onClick={() => sendMessage(tag)}
-                className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/8 px-2.5 py-1.5 text-[11px] font-medium text-accent transition hover:border-accent/55 hover:bg-accent/15"
+                className="inline-flex  items-center justify-start gap-0.5 rounded-2xl border border-accent/30 bg-accent/8 px-1 py-1 text-[5px] font-medium text-accent transition hover:border-accent/55 hover:bg-accent/15"
               >
-                <span className="inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-accent/20 px-1 text-[8px] font-bold">
+                <span className="inline-flex h-6 min-w-3 items-center justify-center rounded-full bg-accent/20 px-1 text-[8px] font-bold">
                   {featureBadges[tag] ?? "+"}
                 </span>
                 {tag}

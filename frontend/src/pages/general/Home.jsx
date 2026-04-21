@@ -17,7 +17,7 @@ export default function Home() {
         <div className="absolute bottom-[6%] right-[4%] h-36 w-36 rounded-full bg-warning/15 blur-3xl lg:h-64 lg:w-64" />
       </div>
 
-      <div className="relative mx-auto flex h-dvh min-h-0 w-full max-w-[1800px] gap-0 p-0 sm:gap-2 sm:p-2 md:gap-3 md:p-3 xl:gap-4 xl:p-4 2xl:px-6">
+      <div className="relative mx-auto flex h-dvh min-h-0 w-full max-w-450 gap-0 p-0 sm:gap-2 sm:p-2 md:gap-3 md:p-3 xl:gap-4 xl:p-4 2xl:px-6">
         {/* Sidebar — xl+ only */}
         <Sidebar />
 

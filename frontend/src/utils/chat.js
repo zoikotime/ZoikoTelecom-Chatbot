@@ -1,6 +1,7 @@
 const linkLabels = {
   "https://zoikotelecom.com/ee-mobile-plans/": "EE Mobile Plans",
   "https://zoikotelecom.com/faqs/": "Mobile FAQs",
+  "https://zoikotelecom.com/faqs/ee-sim-deals-faqs/": "Mobile FAQs",
   "https://zoikotelecom.com/bt-broadband/": "High-Speed Broadband",
   "https://zoikotelecom.com/landlines/": "Home Landlines",
   "https://zoikotelecom.com/landline-business/": "Business Landline Service",

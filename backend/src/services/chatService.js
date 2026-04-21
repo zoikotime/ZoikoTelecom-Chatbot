@@ -120,6 +120,95 @@ function normalizeText(text) {
   return cleaned.replace(/\s+/g, " ").trim();
 }
 
+function getEditDistance(left, right) {
+  if (left === right) {
+    return 0;
+  }
+
+  if (!left.length) {
+    return right.length;
+  }
+
+  if (!right.length) {
+    return left.length;
+  }
+
+  const rows = left.length + 1;
+  const cols = right.length + 1;
+  const matrix = Array.from({ length: rows }, () => Array(cols).fill(0));
+
+  for (let row = 0; row < rows; row += 1) {
+    matrix[row][0] = row;
+  }
+
+  for (let col = 0; col < cols; col += 1) {
+    matrix[0][col] = col;
+  }
+
+  for (let row = 1; row < rows; row += 1) {
+    for (let col = 1; col < cols; col += 1) {
+      const cost = left[row - 1] === right[col - 1] ? 0 : 1;
+      matrix[row][col] = Math.min(
+        matrix[row - 1][col] + 1,
+        matrix[row][col - 1] + 1,
+        matrix[row - 1][col - 1] + cost,
+      );
+    }
+  }
+
+  return matrix[left.length][right.length];
+}
+
+function isSingleAdjacentSwap(left, right) {
+  if (!left || !right || left.length !== right.length || left === right) {
+    return false;
+  }
+
+  const mismatches = [];
+  for (let index = 0; index < left.length; index += 1) {
+    if (left[index] !== right[index]) {
+      mismatches.push(index);
+      if (mismatches.length > 2) {
+        return false;
+      }
+    }
+  }
+
+  if (mismatches.length !== 2) {
+    return false;
+  }
+
+  const [first, second] = mismatches;
+  return (
+    second === first + 1 &&
+    left[first] === right[second] &&
+    left[second] === right[first]
+  );
+}
+
+function isSafeTypoMatch(queryToken, keywordToken) {
+  if (!queryToken || !keywordToken) {
+    return false;
+  }
+
+  if (queryToken === keywordToken) {
+    return false;
+  }
+
+  if (queryToken.length < 4 || keywordToken.length < 4) {
+    return false;
+  }
+
+  if (Math.abs(queryToken.length - keywordToken.length) > 1) {
+    return false;
+  }
+
+  return (
+    getEditDistance(queryToken, keywordToken) === 1 ||
+    isSingleAdjacentSwap(queryToken, keywordToken)
+  );
+}
+
 function loadKnowledgeFromFile() {
   if (!fs.existsSync(dataPath)) {
     return {
@@ -190,24 +279,39 @@ function ensureSuggestions(intentId, suggestions = []) {
 function getIntentCtas(intentId) {
   switch (intentId) {
     case "mobile_intro":
+    case "mobile_all_plans":
     case "mobile_traditional":
     case "mobile_light":
     case "mobile_moderate":
     case "mobile_heavy":
     case "mobile_usage_unsure":
+    case "plan_z_unlimited":
+    case "plan_super_z":
+    case "plan_z_royal":
+    case "plan_z_comfort":
+    case "plan_z_essentials":
+    case "plans_under_15":
+    case "plans_under_20":
+    case "plans_above_20":
     case "esim_intro":
     case "esim_check":
     case "esim_explain":
-    case "broadband_intro":
-    case "broadband_help":
+    case "mobile_broadband":
+    case "day_pass_roaming":
+    case "voice_text_plans":
     case "business_intro":
     case "landline_intro":
     case "support_intro":
     case "something_else":
+      return [CTA_MAP["View Plans Now"]];
+    case "broadband_intro":
+    case "broadband_help":
       return [];
     case "mobile_contract":
     case "website_search_mobile":
     case "faq_number_porting":
+    case "faq_roaming":
+    case "faq_unlimited_data":
       return [CTA_MAP["View Plans Now"]];
     case "esim_plans":
       return [CTA_MAP["View eSIM Plans"]];
@@ -222,6 +326,7 @@ function getIntentCtas(intentId) {
       return [CTA_MAP["View Home Landlines"]];
     case "business_solutions":
     case "iot_sims":
+    case "all_services":
     case "website_search_business":
       return [CTA_MAP["View Business Solutions"]];
     case "equipment":
@@ -233,6 +338,7 @@ function getIntentCtas(intentId) {
     case "support_technical":
       return [CTA_MAP["Call support"], CTA_MAP["Open contact page"]];
     case "billing_question":
+    case "faq_account_access":
       return [CTA_MAP["Call support"]];
     case "pricing":
       return [
@@ -296,13 +402,24 @@ async function getKnowledgeBase() {
   return loadKnowledgeFromFile();
 }
 
-function scoreIntent(query, keywords) {
+function analyzeIntentMatch(query, keywords) {
   if (!Array.isArray(keywords) || keywords.length === 0) {
-    return 0;
+    return {
+      score: 0,
+      exactPhraseWords: 0,
+      exactPhraseCount: 0,
+      fullKeywordWords: 0,
+      typoMatches: 0,
+    };
   }
 
   let score = 0;
-  const queryTokens = new Set(query.split(" "));
+  let exactPhraseWords = 0;
+  let exactPhraseCount = 0;
+  let fullKeywordWords = 0;
+  let typoMatches = 0;
+  const queryTokenList = query.split(" ");
+  const queryTokens = new Set(queryTokenList);
   const paddedQuery = ` ${query} `;
 
   for (const keyword of keywords) {
@@ -312,7 +429,10 @@ function scoreIntent(query, keywords) {
     }
 
     if (paddedQuery.includes(` ${normalizedKeyword} `)) {
-      score += Math.max(3, normalizedKeyword.split(" ").length * 2);
+      const wordCount = normalizedKeyword.split(" ").length;
+      score += Math.max(4, wordCount * 4);
+      exactPhraseCount += 1;
+      exactPhraseWords = Math.max(exactPhraseWords, wordCount);
       continue;
     }
 
@@ -322,13 +442,79 @@ function scoreIntent(query, keywords) {
     ).length;
 
     if (overlap === keywordTokens.length && keywordTokens.length > 1) {
-      score += overlap * 2;
+      score += overlap * 3;
+      fullKeywordWords = Math.max(fullKeywordWords, keywordTokens.length);
     } else if (keywordTokens.length === 1 && overlap === 1) {
       score += 1;
+    } else if (keywordTokens.length === 1) {
+      const [keywordToken] = keywordTokens;
+      const hasTypoMatch = queryTokenList.some((queryToken) =>
+        isSafeTypoMatch(queryToken, keywordToken),
+      );
+
+      if (hasTypoMatch) {
+        score += 2;
+        typoMatches += 1;
+      }
     }
   }
 
-  return score;
+  return {
+    score,
+    exactPhraseWords,
+    exactPhraseCount,
+    fullKeywordWords,
+    typoMatches,
+  };
+}
+
+function scoreIntent(query, keywords) {
+  return analyzeIntentMatch(query, keywords).score;
+}
+
+function findBestIntentMatch(query, intents) {
+  let bestMatch = null;
+  let bestAnalysis = null;
+
+  for (const intent of intents) {
+    const analysis = analyzeIntentMatch(query, intent.keywords || []);
+    if (analysis.score <= 0) {
+      continue;
+    }
+
+    if (!bestAnalysis) {
+      bestMatch = intent;
+      bestAnalysis = analysis;
+      continue;
+    }
+
+    const isBetterMatch =
+      analysis.score > bestAnalysis.score ||
+      (analysis.score === bestAnalysis.score &&
+        analysis.exactPhraseWords > bestAnalysis.exactPhraseWords) ||
+      (analysis.score === bestAnalysis.score &&
+        analysis.exactPhraseWords === bestAnalysis.exactPhraseWords &&
+        analysis.exactPhraseCount > bestAnalysis.exactPhraseCount) ||
+      (analysis.score === bestAnalysis.score &&
+        analysis.exactPhraseWords === bestAnalysis.exactPhraseWords &&
+        analysis.exactPhraseCount === bestAnalysis.exactPhraseCount &&
+        analysis.fullKeywordWords > bestAnalysis.fullKeywordWords) ||
+      (analysis.score === bestAnalysis.score &&
+        analysis.exactPhraseWords === bestAnalysis.exactPhraseWords &&
+        analysis.exactPhraseCount === bestAnalysis.exactPhraseCount &&
+        analysis.fullKeywordWords === bestAnalysis.fullKeywordWords &&
+        analysis.typoMatches < bestAnalysis.typoMatches);
+
+    if (isBetterMatch) {
+      bestMatch = intent;
+      bestAnalysis = analysis;
+    }
+  }
+
+  return {
+    intent: bestMatch,
+    score: bestAnalysis?.score || 0,
+  };
 }
 
 function findIntentById(intents, intentId) {
@@ -611,9 +797,11 @@ function buildChatResponse(message, knowledge, sessionId) {
     "become a reseller": "reseller",
     "open contact page": "support_technical",
     "call support": "support_technical",
-    "mobile plans": "pricing",
-    broadband: "pricing",
-    "landline business": "pricing",
+    "mobile plans": "mobile_intro",
+    broadband: "broadband_intro",
+    "landline business": "landline_business",
+    "business plans": "landline_business",
+    "mobile bundles": "mobile_all_plans",
   };
 
   const suggestionIntentId = suggestionMap[normalized];
@@ -622,6 +810,15 @@ function buildChatResponse(message, knowledge, sessionId) {
     if (mappedIntent) {
       return buildIntentResponse(mappedIntent, knowledge, session);
     }
+  }
+
+  const { intent: bestMatch, score: bestScore } = findBestIntentMatch(
+    normalized,
+    intents,
+  );
+
+  if (bestMatch && bestScore >= 2) {
+    return buildIntentResponse(bestMatch, knowledge, session);
   }
 
   const searchRedirectMatches = findSearchRedirectMatches(
@@ -634,20 +831,6 @@ function buildChatResponse(message, knowledge, sessionId) {
       knowledge,
       session,
     );
-  }
-
-  let bestMatch = null;
-  let bestScore = 0;
-  for (const intent of intents) {
-    const score = scoreIntent(normalized, intent.keywords || []);
-    if (score > bestScore) {
-      bestScore = score;
-      bestMatch = intent;
-    }
-  }
-
-  if (bestMatch && bestScore >= 2) {
-    return buildIntentResponse(bestMatch, knowledge, session);
   }
 
   return buildFallbackResponse(knowledge, session);
