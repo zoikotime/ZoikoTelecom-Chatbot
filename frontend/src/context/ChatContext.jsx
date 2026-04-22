@@ -6,6 +6,38 @@ import { createSessionId, timeStampLabel } from "../utils/chat";
 
 const ChatContext = createContext(null);
 const STORAGE_KEY = "zoiko-chat-session-id";
+const INDICATOR_DELAY_MS = 650;
+const MAX_STREAM_TIME_MS = 2200;
+const MIN_STREAM_STEPS = 12;
+const MAX_STREAM_STEPS = 60;
+
+function sleep(delay) {
+  return new Promise((resolve) => setTimeout(resolve, delay));
+}
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function getProgressiveFrames(text) {
+  if (!text) {
+    return [""];
+  }
+
+  const stepCount = clamp(
+    text.length,
+    MIN_STREAM_STEPS,
+    MAX_STREAM_STEPS,
+  );
+  const frameSet = new Set();
+
+  for (let step = 1; step <= stepCount; step += 1) {
+    const nextLength = Math.ceil((text.length * step) / stepCount);
+    frameSet.add(text.slice(0, nextLength));
+  }
+
+  return [...frameSet];
+}
 
 function getFixedSuggestions() {
   return starterSuggestions;
@@ -48,6 +80,15 @@ function chatReducer(state, action) {
       return { ...state, input: action.payload };
     case "ADD_MESSAGE":
       return { ...state, messages: [...state.messages, action.payload] };
+    case "UPDATE_MESSAGE":
+      return {
+        ...state,
+        messages: state.messages.map((message) =>
+          message.id === action.payload.id
+            ? { ...message, ...action.payload.updates }
+            : message
+        ),
+      };
     case "SET_TYPING":
       return { ...state, typing: action.payload };
     case "RESET_CHAT": {
@@ -66,6 +107,16 @@ function chatReducer(state, action) {
 export function ChatProvider({ children }) {
   const [state, dispatch] = useReducer(chatReducer, initialState);
   const messagesRef = useRef(null);
+  const isMountedRef = useRef(true);
+  const activeRequestRef = useRef(0);
+
+  useEffect(() => {
+    isMountedRef.current = true;
+
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
 
   useEffect(() => {
     if (messagesRef.current) {
@@ -83,6 +134,9 @@ export function ChatProvider({ children }) {
       return;
     }
 
+    const requestId = Date.now();
+    activeRequestRef.current = requestId;
+
     dispatch({
       type: "ADD_MESSAGE",
       payload: {
@@ -98,18 +152,66 @@ export function ChatProvider({ children }) {
 
     try {
       const payload = await sendChatMessage(rawText, state.sessionId);
-      await new Promise((resolve) => setTimeout(resolve, 450));
+      if (!isMountedRef.current || activeRequestRef.current !== requestId) {
+        return;
+      }
+
+      await sleep(INDICATOR_DELAY_MS);
+
+      if (!isMountedRef.current || activeRequestRef.current !== requestId) {
+        return;
+      }
+
+      const botMessageId = `${Date.now()}-bot`;
+      const responseText = payload.response || "";
+      const frames = getProgressiveFrames(responseText);
+      const streamDelay = Math.max(
+        16,
+        Math.floor(MAX_STREAM_TIME_MS / Math.max(frames.length, 1)),
+      );
+
+      dispatch({ type: "SET_TYPING", payload: false });
 
       dispatch({
         type: "ADD_MESSAGE",
         payload: {
-          id: `${Date.now()}-bot`,
+          id: botMessageId,
           type: "message",
           sender: "bot",
-          text: payload.response,
-          suggestions: payload.suggestions?.length ? payload.suggestions : getFixedSuggestions(),
-          ctas: payload.ctas || [],
+          text: "",
+          suggestions: [],
+          ctas: [],
           time: timeStampLabel(),
+        },
+      });
+
+      for (const frame of frames) {
+        dispatch({
+          type: "UPDATE_MESSAGE",
+          payload: {
+            id: botMessageId,
+            updates: {
+              text: frame,
+            },
+          },
+        });
+
+        await sleep(streamDelay);
+
+        if (!isMountedRef.current || activeRequestRef.current !== requestId) {
+          return;
+        }
+      }
+
+      dispatch({
+        type: "UPDATE_MESSAGE",
+        payload: {
+          id: botMessageId,
+          updates: {
+            text: responseText,
+            suggestions: payload.suggestions?.length ? payload.suggestions : getFixedSuggestions(),
+            ctas: payload.ctas || [],
+          },
         },
       });
     } catch (_error) {

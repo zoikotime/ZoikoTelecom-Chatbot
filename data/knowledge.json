@@ -460,7 +460,13 @@
         "show every plan",
         "list every plan",
         "full list",
-        "complete list"
+        "complete list",
+        "mobile plan list",
+        "list of mobile plans",
+        "good mobile plan",
+        "good mobile plans",
+        "best mobile plan",
+        "best mobile plans"
       ],
       "response": "Here's a full overview of our EE Mobile Bundles:\n\n📦 Z-Unlimited — Unlimited data\n   £29/mo (24m) | £32/mo (12m) | £35/mo (30-day)\n\n📦 Super-Z — 100GB\n   £25/mo (24m) | £27.50/mo (12m) | £30/mo (30-day)\n\n📦 Z-Royal — 50GB\n   £15/mo (24m) | £16.50/mo (12m) | £18/mo (30-day)\n\n📦 Z-Comfort — 20GB\n   £11/mo (24m) | £12/mo (12m) | £13.50/mo (30-day)\n\n📦 Z-Essentials — 10GB\n   £9.50/mo (24m) | £10.50/mo (12m) | £11.50/mo (30-day)\n\nAll plans include unlimited UK calls & texts, EU roaming, 5G, free SIM & delivery.\n\n🔗 https://zoikotelecom.com/ee-mobile-plans/\n\nWould you like details on a specific plan?",
       "url": "https://zoikotelecom.com/ee-mobile-plans/",
@@ -489,10 +495,8 @@
       "response": "📦 Z-Unlimited Plan\n\n🌐 Data: Unlimited\n📞 Calls & Texts: Unlimited UK minutes & texts\n\n💷 Pricing:\n   • 24-month: £29.00/mo (best value)\n   • 12-month: £32.00/mo\n   • 30-day rolling: £35.00/mo\n\n✅ Includes:\n   • EU Roaming\n   • 5G Ready\n   • WiFi Calling\n   • eSIM & pSIM options\n   • Free SIM & Free Delivery\n\nBest for: Heavy streamers, remote workers, hotspot users — anyone who never wants to worry about data limits.\n\n🔗 https://zoikotelecom.com/ee-mobile-plans/",
       "url": "https://zoikotelecom.com/ee-mobile-plans/",
       "suggestions": [
-        "Order Z-Unlimited",
         "Compare all plans",
         "Choose contract length",
-        "Back to Mobile Plans",
         "Speak to an Agent"
       ]
     },
@@ -502,11 +506,9 @@
       "response": "📦 Super-Z Plan\n\n🌐 Data: 100GB\n📞 Calls & Texts: Unlimited UK minutes & texts\n\n💷 Pricing:\n   • 24-month: £25.00/mo (best value)\n   • 12-month: £27.50/mo\n   • 30-day rolling: £30.00/mo\n\n✅ Includes:\n   • EU Roaming\n   • 5G Ready\n   • WiFi Calling\n   • eSIM & pSIM options\n   • Free SIM & Free Delivery\n\nBest for: Regular streamers, social media users, and WFH professionals who need plenty of data.\n\n🔗 https://zoikotelecom.com/ee-mobile-plans/",
       "url": "https://zoikotelecom.com/ee-mobile-plans/",
       "suggestions": [
-        "Order Super-Z",
         "Compare all plans",
         "Z-Unlimited (more data)",
         "Z-Royal (save more)",
-        "Back to Mobile Plans",
         "Speak to an Agent"
       ]
     },
@@ -523,11 +525,9 @@
       "response": "📦 Z-Royal Plan\n\n🌐 Data: 50GB\n📞 Calls & Texts: Unlimited UK minutes & texts\n\n💷 Pricing:\n   • 24-month: £15.00/mo (best value)\n   • 12-month: £16.50/mo\n   • 30-day rolling: £18.00/mo\n\n✅ Includes:\n   • EU Roaming\n   • 5G Ready\n   • WiFi Calling\n   • eSIM & pSIM options\n   • Free SIM & Free Delivery\n\nBest for: Moderate users who want a great balance of data and value.\n\n🔗 https://zoikotelecom.com/ee-mobile-plans/",
       "url": "https://zoikotelecom.com/ee-mobile-plans/",
       "suggestions": [
-        "Order Z-Royal",
         "Compare all plans",
         "Super-Z (more data)",
         "Z-Comfort (save more)",
-        "Back to Mobile Plans",
         "Speak to an Agent"
       ]
     },
@@ -544,12 +544,37 @@
       "response": "📦 Z-Comfort Plan\n\n🌐 Data: 20GB\n📞 Calls & Texts: Unlimited UK minutes & texts\n\n💷 Pricing:\n   • 24-month: £11.00/mo (best value)\n   • 12-month: £12.00/mo\n   • 30-day rolling: £13.50/mo\n\n✅ Includes:\n   • EU Roaming\n   • 5G Ready\n   • WiFi Calling\n   • eSIM & pSIM options\n   • Free SIM & Free Delivery\n\nBest for: Light to moderate users who browse, message and occasionally stream.\n\n🔗 https://zoikotelecom.com/ee-mobile-plans/",
       "url": "https://zoikotelecom.com/ee-mobile-plans/",
       "suggestions": [
-        "Order Z-Comfort",
         "Compare all plans",
         "Z-Royal (more data)",
         "Z-Essentials (budget option)",
-        "Back to Mobile Plans",
         "Speak to an Agent"
+      ]
+    },
+    {
+      "id": "cheapest_plans_overview",
+      "keywords": [
+        "cheapest plan",
+        "cheapest plans",
+        "most affordable plan",
+        "most affordable plans",
+        "lowest price plan",
+        "lowest priced plan",
+        "cheap options",
+        "cheap plans",
+        "budget plans",
+        "cheapest mobile plan",
+        "cheapest mobile plans",
+        "cheapest sim plan",
+        "cheapest broadband plan",
+        "cheapest landline plan"
+      ],
+      "response": "Final Summary — Cheapest in Each Category\n\nCategory | Cheapest Plan | Price/mo\nVoice & Text (SIM) | Talk Master | £5.50\nMobile Data Bundles | Z-Essentials | £9.50\nBusiness Landline | Zoiko SmartVoice | £8.99\nBroadband | Zippy Fibre | £29.95\nOverall Cheapest Plan | Talk Master (Voice & Text) | £5.50\n\nQuick links:\n• Talk Master: https://zoikotelecom.com/voice-and-text-plans/\n• Z-Essentials: https://zoikotelecom.com/product/z-essentials/\n• Zoiko SmartVoice: https://zoikotelecom.com/landlines/\n• Zippy Fibre: https://zoikotelecom.com/bt-broadband/\n\nIf you want the absolute cheapest overall, Talk Master at £5.50 is the lowest-cost option. If you want the cheapest monthly mobile bundle, go for Z-Essentials at £9.50/mo.",
+      "suggestions": [
+        "Talk Master",
+        "Z-Essentials",
+        "Zoiko SmartVoice",
+        "Zippy Fibre",
+        "Back to Main Menu"
       ]
     },
     {
@@ -561,17 +586,36 @@
         "10gb plan",
         "10 gb plan",
         "essentials plan",
-        "cheapest plan",
-        "most affordable",
         "budget plan"
       ],
       "response": "📦 Z-Essentials Plan\n\n🌐 Data: 10GB\n📞 Calls & Texts: Unlimited UK minutes & texts\n\n💷 Pricing:\n   • 24-month: £9.50/mo (best value)\n   • 12-month: £10.50/mo\n   • 30-day rolling: £11.50/mo\n\n✅ Includes:\n   • EU Roaming\n   • 5G Ready\n   • WiFi Calling\n   • eSIM & pSIM options\n   • Free SIM & Free Delivery\n\nBest for: Budget-conscious users with light data needs — calls, texts, and occasional browsing.\n\n🔗 https://zoikotelecom.com/ee-mobile-plans/",
       "url": "https://zoikotelecom.com/ee-mobile-plans/",
       "suggestions": [
-        "Order Z-Essentials",
         "Compare all plans",
         "Z-Comfort (more data)",
-        "Back to Mobile Plans",
+        "Speak to an Agent"
+      ]
+    },
+    {
+      "id": "plans_under_10",
+      "keywords": [
+        "plan under 10",
+        "plans under 10",
+        "under 10 pound",
+        "under 10 pounds",
+        "under £10",
+        "below 10",
+        "plans below 10",
+        "under 10 per month",
+        "cheap plan under 10"
+      ],
+      "conflict_note": "PRIORITY: exact under-10 queries should not fall through to plans_under_15.",
+      "response": "💰 Plans Under £10/Month\n\nThe main monthly option under £10 is:\n\n📦 Z-Essentials — 10GB\n   ✅ £9.50/mo (24-month) | £10.50/mo (12-month) | £11.50/mo (30-day)\n\nAlso under £10 as one-off add-ons:\n📦 Talk Master — £5.50\n📦 Talk Pro — £6.50\n📦 Chat Treat — £7.00\n📦 Euro Explorer — £5.00\n\nFor a monthly mobile bundle under £10, Z-Essentials is the right fit.\n\n🔗 https://zoikotelecom.com/ee-mobile-plans/",
+      "url": "https://zoikotelecom.com/ee-mobile-plans/",
+      "suggestions": [
+        "Z-Essentials plan details",
+        "Compare all plans",
+        "Back to Main Menu",
         "Speak to an Agent"
       ]
     },
@@ -586,6 +630,7 @@
         "cheap plans",
         "affordable plans",
         "plans under 15 pounds",
+        "cheapest plans",
         "under 15 pounds",
         "plans below 15",
         "budget mobile",
@@ -635,7 +680,6 @@
         "premium plan",
         "high data plan",
         "top plans",
-        "best plans",
         "plans over 20",
         "higher plans",
         "unlimited plan above 20"
@@ -666,12 +710,15 @@
         "portable wifi",
         "wifi dongle",
         "hotspot sim",
+        "good mobile plans",
         "zb-bliss",
         "zb bliss",
         "zb-unlimited",
         "zb unlimited",
         "zb-velocity",
         "zb velocity",
+        "different bt plans",
+        "different broadband plans",
         "mobile broadband plans",
         "broadband sim plans"
       ],
@@ -686,14 +733,53 @@
       ]
     },
     {
+      "id": "plan_world_traveller",
+      "keywords": [
+        "world traveller",
+        "world traveler",
+        "global travel plan",
+        "international",
+        "international travel plan",
+        "travel outside eu"
+      ],
+      "response": "🌍 World Traveller\n\nA one-time roaming plan for wider international travel.\n\n📦 Includes:\n   • 1GB data\n   • 60 minutes\n   • 60 texts\n   • £15.00 one-time charge\n\nBest for: Short trips outside the EU where you want calls, texts and data in one bundle.\n\n🔗 https://zoikotelecom.com/product-category/day-pass-roaming-plans/",
+      "url": "https://zoikotelecom.com/product-category/day-pass-roaming-plans/",
+      "suggestions": ["Pro Traveller", "Euro Explorer", "Back to Main Menu"]
+    },
+    {
+      "id": "plan_pro_traveller",
+      "keywords": [
+        "pro traveller",
+        "pro traveler",
+        "business traveller",
+        "business traveler",
+        "travel plan for calls",
+        "travel plan for business"
+      ],
+      "response": "💼 Pro Traveller\n\nA one-time roaming plan built for travellers who need plenty of calls and texts.\n\n📦 Includes:\n   • 1GB data\n   • Unlimited minutes\n   • Unlimited texts\n   • £10.00 one-time charge\n\nBest for: Business trips and travellers who expect to make more calls abroad.\n\n🔗 https://zoikotelecom.com/product-category/day-pass-roaming-plans/",
+      "url": "https://zoikotelecom.com/product-category/day-pass-roaming-plans/",
+      "suggestions": ["World Traveller", "Euro Explorer", "Back to Main Menu"]
+    },
+    {
+      "id": "plan_euro_explorer",
+      "keywords": [
+        "euro explorer",
+        "europe travel plan",
+        "eu travel plan",
+        "travel in europe",
+        "travel in eu",
+        "europe roaming"
+      ],
+      "response": "🇪🇺 Euro Explorer\n\nA one-time roaming plan designed for EU travel.\n\n📦 Includes:\n   • 2GB data\n   • Unlimited minutes\n   • Unlimited texts\n   • £5.00 one-time charge\n\nBest for: EU trips where you want the best-value travel option.\n\n🔗 https://zoikotelecom.com/product-category/day-pass-roaming-plans/",
+      "url": "https://zoikotelecom.com/product-category/day-pass-roaming-plans/",
+      "suggestions": ["Pro Traveller", "World Traveller", "Back to Main Menu"]
+    },
+    {
       "id": "day_pass_roaming",
       "keywords": [
         "day pass",
         "roaming plan",
         "day pass roaming",
-        "world traveller",
-        "pro traveller",
-        "euro explorer",
         "travel plan",
         "roaming day pass",
         "international day pass",
@@ -701,31 +787,69 @@
         "holiday data"
       ],
       "conflict_note": "Separate from faq_roaming (which is about EU roaming on bundles). Triggered by 'day pass' or named plan.",
-      "response": "✈️ Day Pass Roaming Plans (One-Time Charge)\n\nPerfect for short trips abroad — pay once, use and go:\n\n🌍 World Traveller\n   1GB data | 60 mins | 60 SMS — £15.00\n   Best for: Short international trips with moderate usage.\n\n💼 Pro Traveller\n   1GB data | Unlimited mins | Unlimited SMS — £10.00\n   Best for: Callers who need unlimited calls abroad.\n\n🇪🇺 Euro Explorer\n   2GB data | Unlimited mins | Unlimited SMS — £5.00\n   Best for: EU travel — our best value roaming option!\n\n🔗 https://zoikotelecom.com/ee-mobile-plans/",
-      "url": "https://zoikotelecom.com/ee-mobile-plans/",
+      "response": "✈️ Day Pass Roaming Plans (One-Time Charge)\n\nPerfect for short trips abroad — pay once, use and go:\n\n🌍 World Traveller\n   1GB data | 60 mins | 60 SMS — £15.00\n   Best for: Short international trips with moderate usage.\n\n💼 Pro Traveller\n   1GB data | Unlimited mins | Unlimited SMS — £10.00\n   Best for: Callers who need unlimited calls abroad.\n\n🇪🇺 Euro Explorer\n   2GB data | Unlimited mins | Unlimited SMS — £5.00\n   Best for: EU travel — our best value roaming option!\n\n🔗 https://zoikotelecom.com/product-category/day-pass-roaming-plans/",
+      "url": "https://zoikotelecom.com/product-category/day-pass-roaming-plans/",
       "suggestions": [
-        "World Traveller details",
+        "World Traveller",
+        "Pro Traveller",
+        "Euro Explorer",
         "Back to Main Menu",
         "Speak to an Agent"
       ]
+    },
+    {
+      "id": "plan_chat_treat",
+      "keywords": [
+        "chat treat",
+        "chat treat plan",
+        "cheap voice plan",
+        "cheap text plan",
+        "calls and texts only plan"
+      ],
+      "response": "💬 Chat Treat\n\nA simple one-off plan focused on calling and texting.\n\n📦 Includes:\n   • 100MB data\n   • 1000 minutes\n   • 1000 texts\n   • £7.00 one-time charge\n\nBest for: Mainly calling and texting with very light data use.\n\n🔗 https://zoikotelecom.com/voice-and-text-plans/",
+      "url": "https://zoikotelecom.com/voice-and-text-plans/",
+      "suggestions": ["Talk Pro", "Talk Master", "Back to Main Menu"]
+    },
+    {
+      "id": "plan_talk_pro",
+      "keywords": [
+        "talk pro",
+        "talk pro plan",
+        "voice plan with roaming",
+        "travel voice plan"
+      ],
+      "response": "📱 Talk Pro\n\nA one-off voice and text plan with roaming included.\n\n📦 Includes:\n   • 100MB data + 100MB roaming data\n   • 1000 minutes\n   • 1000 texts\n   • £6.50 one-time charge\n\nBest for: Callers who also travel occasionally and want a low-cost option.\n\n🔗 https://zoikotelecom.com/voice-and-text-plans/",
+      "url": "https://zoikotelecom.com/voice-and-text-plans/",
+      "suggestions": ["Talk Master", "Chat Treat", "Back to Main Menu"]
+    },
+    {
+      "id": "plan_talk_master",
+      "keywords": [
+        "talk master",
+        "talk master plan",
+        "best voice text plan",
+        "affordable voice text plan"
+      ],
+      "response": "🏆 Talk Master\n\nOur most affordable one-off voice and text plan with roaming included.\n\n📦 Includes:\n   • 100MB data + 100MB roaming data\n   • 1000 minutes\n   • 1000 texts\n   • £5.50 one-time charge\n\nBest for: Budget-conscious users who mainly need calls and texts.\n\n🔗 https://zoikotelecom.com/voice-and-text-plans/",
+      "url": "https://zoikotelecom.com/voice-and-text-plans/",
+      "suggestions": ["Talk Pro", "Chat Treat", "Back to Main Menu"]
     },
     {
       "id": "voice_text_plans",
       "keywords": [
         "voice and text",
         "voice text plan",
-        "chat treat",
-        "talk pro",
-        "talk master",
         "voice plan",
         "text plan",
         "calls and texts plan",
         "voice text"
       ],
-      "response": "📞 Voice & Text Plans (One-Time Charge)\n\nAffordable one-off plans focused on calls and texts:\n\n💬 Chat Treat\n   100MB data | 1000 mins | 1000 texts — £7.00\n   Best for: Mainly calling and texting with minimal data.\n\n📱 Talk Pro\n   100MB + 100MB Roaming | 1000 mins | 1000 texts — £6.50\n   Best for: Callers who also travel occasionally.\n\n🏆 Talk Master\n   100MB + 100MB Roaming | 1000 mins | 1000 texts — £5.50\n   Best for: Most affordable option with roaming included.\n\n🔗 https://zoikotelecom.com/ee-mobile-plans/",
-      "url": "https://zoikotelecom.com/ee-mobile-plans/",
+      "response": "📞 Voice & Text Plans (One-Time Charge)\n\nAffordable one-off plans focused on calls and texts:\n\n💬 Chat Treat\n   100MB data | 1000 mins | 1000 texts — £7.00\n   Best for: Mainly calling and texting with minimal data.\n\n📱 Talk Pro\n   100MB + 100MB Roaming | 1000 mins | 1000 texts — £6.50\n   Best for: Callers who also travel occasionally.\n\n🏆 Talk Master\n   100MB + 100MB Roaming | 1000 mins | 1000 texts — £5.50\n   Best for: Most affordable option with roaming included.\n\n🔗 https://zoikotelecom.com/voice-and-text-plans/",
+      "url": "https://zoikotelecom.com/voice-and-text-plans/",
       "suggestions": [
-        "Monthly mobile bundles",
+        "Chat Treat",
+        "Talk Pro",
+        "Talk Master",
         "Back to Main Menu",
         "Speak to an Agent"
       ]
@@ -885,7 +1009,6 @@
         "Z-Unlimited details",
         "Z-Royal details",
         "Plans under £15",
-        "Back to Mobile Plans",
         "Speak to an Agent"
       ]
     },
@@ -903,8 +1026,7 @@
         "Light user (10-20GB)",
         "Moderate user (50-100GB)",
         "Heavy user (150GB+)",
-        "I'm not sure",
-        "Back to Mobile Plans"
+        "I'm not sure"
       ]
     },
     {
@@ -921,8 +1043,7 @@
         "Heavy user (100GB+)",
         "Moderate user (50GB)",
         "Light user (10-20GB)",
-        "Show me all plans",
-        "Back to Mobile Plans"
+        "Show me all plans"
       ]
     },
     {
@@ -940,10 +1061,7 @@
       "suggestions": [
         "Z-Essentials details",
         "Z-Comfort details",
-        "24-month contract",
-        "12-month contract",
-        "30-day rolling",
-        "Back to Mobile Plans"
+        "contract details"
       ]
     },
     {
@@ -957,14 +1075,7 @@
       ],
       "response": "🌿 Moderate User Recommendations\n\nBased on moderate usage, I'd recommend:\n\n📦 Z-Royal — 50GB\n   From £15.00/mo (24-month) 🔗 https://zoikotelecom.com/ee-mobile-plans/\n\n📦 Super-Z — 100GB\n   From £25.00/mo (24-month) 🔗 https://zoikotelecom.com/ee-mobile-plans/\n\nBoth include unlimited UK calls & texts, EU roaming, 5G, free SIM & delivery.\n\nWhat contract length suits you?",
       "url": "https://zoikotelecom.com/ee-mobile-plans/",
-      "suggestions": [
-        "Z-Royal details",
-        "Super-Z details",
-        "24-month contract",
-        "12-month contract",
-        "30-day rolling",
-        "Back to Mobile Plans"
-      ]
+      "suggestions": ["Z-Royal details", "Super-Z details", "contract details"]
     },
     {
       "id": "mobile_heavy",
@@ -980,14 +1091,7 @@
       ],
       "response": "🌳 Heavy User Recommendations\n\nBased on heavy usage, I'd recommend:\n\n📦 Super-Z — 100GB\n   From £25.00/mo (24-month) 🔗 https://zoikotelecom.com/ee-mobile-plans/\n\n📦 Z-Unlimited — Unlimited Data\n   From £29.00/mo (24-month) 🔗 https://zoikotelecom.com/ee-mobile-plans/\n\nFor heavy users who hotspot or stream a lot — Z-Unlimited is the stress-free choice!\n\nAll plans include unlimited UK calls & texts, EU roaming, 5G, free SIM & delivery.",
       "url": "https://zoikotelecom.com/ee-mobile-plans/",
-      "suggestions": [
-        "Z-Unlimited details",
-        "Super-Z details",
-        "24-month contract",
-        "12-month contract",
-        "30-day rolling",
-        "Back to Mobile Plans"
-      ]
+      "suggestions": ["Z-Unlimited details", "Super-Z details"]
     },
     {
       "id": "mobile_contract",
@@ -995,6 +1099,11 @@
         "30-day rolling",
         "12-month contract",
         "24-month contract",
+        "contract",
+        "contract details",
+        "contract information",
+        "contract info",
+        "contract options",
         "contract length",
         "which contract",
         "monthly rolling",
@@ -1003,13 +1112,95 @@
       ],
       "response": "📅 Contract Options\n\nAll our EE mobile plans are available on three contract lengths:\n\n🔄 30-Day Rolling — Maximum flexibility, cancel anytime with 30 days' notice. Slightly higher monthly cost.\n\n📆 12-Month — Better value, lower monthly cost than 30-day.\n\n📆 24-Month — Best value overall, lowest monthly price. Ideal if you're happy to commit.\n\nHere's where you can see all plans with pricing for each contract length:\n🔗 https://zoikotelecom.com/ee-mobile-plans/",
       "url": "https://zoikotelecom.com/ee-mobile-plans/",
+      "suggestions": ["Speak to an Agent"]
+    },
+    {
+      "id": "broadband_all_plans",
+      "keywords": [
+        "broadband plans",
+        "all broadband plans",
+        "list broadband plans",
+        "show broadband plans",
+        "different broadband plans",
+        "bt broadband plans",
+        "fibre plans"
+      ],
+      "response": "🌐 BT Broadband Plans\n\nHere are the main broadband options currently listed by Zoiko:\n\n📦 Zippy Fibre — 0.5 Mb/s from £29.95/mo\n📦 Turbo Fibre — 40 Mb/s from £45.99/mo\n📦 Hyper Fibre — 80 Mb/s from £48.99/mo\n📦 Quantum Fibre — 115 Mb/s from £53.98/mo\n📦 Ultra Fibre — 160 Mb/s from £55.98/mo\n📦 Rocket Fibre — 220 Mb/s from £59.98/mo\n📦 Xplosion Fibre — 330 Mb/s from £63.98/mo\n📦 Elite Fibre — 550 Mb/s from £71.98/mo\n📦 Supersonic Fibre — 1000 Mb/s from £79.98/mo\n\n🔗 https://zoikotelecom.com/bt-broadband/\n\nIf you want, ask for any plan by name and I’ll show just that one.",
+      "url": "https://zoikotelecom.com/bt-broadband/",
       "suggestions": [
-        "Show 24-month plans",
-        "Show 12-month plans",
-        "Show 30-day rolling plans",
-        "Back to Mobile Plans",
-        "Speak to an Agent"
+        "Turbo Fibre",
+        "Hyper Fibre",
+        "Rocket Fibre",
+        "Supersonic Fibre",
+        "Back to Main Menu"
       ]
+    },
+    {
+      "id": "broadband_zippy_fibre",
+      "keywords": ["zippy fibre", "zippy fiber", "zippy broadband"],
+      "response": "📦 Zippy Fibre\n\nAn entry-level BT broadband option for very light internet use.\n\n🚀 Speed: 0.5 Mb/s\n💷 Pricing: from £29.95/mo\n\nBest for: Basic browsing and very light household usage.\n\n🔗 https://zoikotelecom.com/bt-broadband/",
+      "url": "https://zoikotelecom.com/bt-broadband/",
+      "suggestions": ["Turbo Fibre", "Hyper Fibre", "Back to Broadband"]
+    },
+    {
+      "id": "broadband_turbo_fibre",
+      "keywords": ["turbo fibre", "turbo fiber", "turbo broadband"],
+      "response": "📦 Turbo Fibre\n\nA solid all-round BT broadband plan for everyday home use.\n\n🚀 Speed: 40 Mb/s\n💷 Pricing: £45.99/mo (24-month) | £47.99/mo (18-month) | £49.99/mo (12-month)\n\nBest for: Streaming, browsing, video calls and general household use.\n\n🔗 https://zoikotelecom.com/bt-broadband/",
+      "url": "https://zoikotelecom.com/bt-broadband/",
+      "suggestions": ["Hyper Fibre", "Quantum Fibre", "Back to Broadband"]
+    },
+    {
+      "id": "broadband_hyper_fibre",
+      "keywords": ["hyper fibre", "hyper fiber", "hyper broadband"],
+      "response": "📦 Hyper Fibre\n\nA faster BT broadband plan for busier homes.\n\n🚀 Speed: 80 Mb/s\n💷 Pricing: from £48.99/mo\n\nBest for: Multiple users streaming, browsing and working from home at the same time.\n\n🔗 https://zoikotelecom.com/bt-broadband/",
+      "url": "https://zoikotelecom.com/bt-broadband/",
+      "suggestions": ["Turbo Fibre", "Quantum Fibre", "Back to Broadband"]
+    },
+    {
+      "id": "broadband_quantum_fibre",
+      "keywords": ["quantum fibre", "quantum fiber", "quantum broadband"],
+      "response": "📦 Quantum Fibre\n\nA mid-tier BT broadband plan with more headroom for connected homes.\n\n🚀 Speed: 115 Mb/s\n💷 Pricing: from £53.98/mo\n\nBest for: Larger households, frequent streaming and regular home working.\n\n🔗 https://zoikotelecom.com/bt-broadband/",
+      "url": "https://zoikotelecom.com/bt-broadband/",
+      "suggestions": ["Hyper Fibre", "Ultra Fibre", "Back to Broadband"]
+    },
+    {
+      "id": "broadband_ultra_fibre",
+      "keywords": ["ultra fibre", "ultra fiber", "ultra broadband"],
+      "response": "📦 Ultra Fibre\n\nA higher-speed BT broadband plan for heavier usage.\n\n🚀 Speed: 160 Mb/s\n💷 Pricing: from £55.98/mo\n\nBest for: Heavy streaming, larger downloads and homes with many connected devices.\n\n🔗 https://zoikotelecom.com/bt-broadband/",
+      "url": "https://zoikotelecom.com/bt-broadband/",
+      "suggestions": ["Quantum Fibre", "Rocket Fibre", "Back to Broadband"]
+    },
+    {
+      "id": "broadband_rocket_fibre",
+      "keywords": ["rocket fibre", "rocket fiber", "rocket broadband"],
+      "response": "📦 Rocket Fibre\n\nA fast BT broadband plan for demanding homes.\n\n🚀 Speed: 220 Mb/s\n💷 Pricing: from £59.98/mo\n\nBest for: Heavy usage, frequent downloads, gaming and multiple simultaneous streams.\n\n🔗 https://zoikotelecom.com/bt-broadband/",
+      "url": "https://zoikotelecom.com/bt-broadband/",
+      "suggestions": ["Ultra Fibre", "Xplosion Fibre", "Back to Broadband"]
+    },
+    {
+      "id": "broadband_xplosion_fibre",
+      "keywords": ["xplosion fibre", "xplosion fiber", "xplosion broadband"],
+      "response": "📦 Xplosion Fibre\n\nA very high-speed BT broadband plan for power users.\n\n🚀 Speed: 330 Mb/s\n💷 Pricing: from £63.98/mo\n\nBest for: Large homes, 4K streaming, gaming and lots of connected devices.\n\n🔗 https://zoikotelecom.com/bt-broadband/",
+      "url": "https://zoikotelecom.com/bt-broadband/",
+      "suggestions": ["Rocket Fibre", "Elite Fibre", "Back to Broadband"]
+    },
+    {
+      "id": "broadband_elite_fibre",
+      "keywords": ["elite fibre", "elite fiber", "elite broadband"],
+      "response": "📦 Elite Fibre\n\nA premium BT broadband plan for very heavy household usage.\n\n🚀 Speed: 550 Mb/s\n💷 Pricing: from £71.98/mo\n\nBest for: Busy households, serious streaming, gaming and home working with minimal slowdowns.\n\n🔗 https://zoikotelecom.com/bt-broadband/",
+      "url": "https://zoikotelecom.com/bt-broadband/",
+      "suggestions": ["Xplosion Fibre", "Supersonic Fibre", "Back to Broadband"]
+    },
+    {
+      "id": "broadband_supersonic_fibre",
+      "keywords": [
+        "supersonic fibre",
+        "supersonic fiber",
+        "supersonic broadband"
+      ],
+      "response": "📦 Supersonic Fibre\n\nZoiko's fastest listed BT broadband plan.\n\n🚀 Speed: 1000 Mb/s\n💷 Pricing: from £79.98/mo\n\nBest for: Ultra-heavy users, smart homes, 4K streaming everywhere and top-end gaming setups.\n\n🔗 https://zoikotelecom.com/bt-broadband/",
+      "url": "https://zoikotelecom.com/bt-broadband/",
+      "suggestions": ["Elite Fibre", "Back to Broadband", "Speak to an Agent"]
     },
     {
       "id": "broadband_intro",
@@ -1026,10 +1217,10 @@
         "home wifi"
       ],
       "conflict_note": "Triggered by home broadband keywords. 'mobile broadband' routes to mobile_broadband intent instead.",
-      "response": "🌐 Home Broadband (BT Network)\n\nWe offer high-speed BT broadband with superfast fibre. All packages include:\n\n✅ Unlimited usage\n✅ Superfast Fibre\n✅ No hidden fees\n✅ UK-based customer support\n✅ Price Lock Guarantee — no mid-contract price increases\n✅ Refer a Friend — £50 credit for you + £50 off for your friend\n✅ Loyalty Bonus — 5% discount for existing customers\n\n📦 Turbo Fibre — 40 Mb/s\n   💷 £45.99/mo (24-month) | £47.99/mo (18-month) | £49.99/mo (12-month)\n\n🔗 https://zoikotelecom.com/bt-broadband/\n\nNeed help choosing the right speed for your household?",
+      "response": "🌐 Home Broadband (BT Network)\n\nWe offer a range of BT broadband plans with superfast fibre options.\n\nExamples include:\n📦 Zippy Fibre — 0.5 Mb/s from £29.95/mo\n📦 Turbo Fibre — 40 Mb/s from £45.99/mo\n📦 Hyper Fibre — 80 Mb/s from £48.99/mo\n📦 Supersonic Fibre — 1000 Mb/s from £79.98/mo\n\n✅ Unlimited usage\n✅ Superfast Fibre\n✅ No hidden fees\n✅ UK-based customer support\n✅ Flexible contract options\n\n🔗 https://zoikotelecom.com/bt-broadband/\n\nIf you want, ask for a specific broadband plan by name and I’ll show just that plan.",
       "url": "https://zoikotelecom.com/bt-broadband/",
       "suggestions": [
-        "Help me choose broadband speed",
+        "Show broadband plans",
         "Installation info",
         "Upgrade/downgrade broadband",
         "Back to Main Menu",
@@ -1060,7 +1251,6 @@
       "response": "Based on your needs, I'd recommend looking at our broadband packages — our Turbo Fibre at 40 Mb/s is a great all-rounder for most households.\n\n📦 Turbo Fibre (40 Mb/s)\n   £45.99/mo (24-month) | £47.99/mo (18-month) | £49.99/mo (12-month)\n\n✅ Unlimited downloads\n✅ Price Lock Guarantee\n✅ UK-based support\n✅ Loyalty Bonus for existing customers\n\n🔗 https://zoikotelecom.com/bt-broadband/",
       "url": "https://zoikotelecom.com/bt-broadband/",
       "suggestions": [
-        "Check availability at my address",
         "Installation info",
         "How to order broadband",
         "Back to Broadband",
@@ -1082,7 +1272,6 @@
       "response": "💼 Business & Landline Services\n\nWe offer comprehensive business solutions and high-quality landline services. What are you looking for?\n\n📞 Landlines — Home or Business\n📶 IoT SIMs — for connected devices\n📱 Mobile plans for staff\n🌐 Business Solutions (internet, cloud, enterprise)\n🤔 Not sure / multiple services",
       "suggestions": [
         "Landlines (Home or Business)",
-        "IoT SIMs",
         "Business Solutions",
         "Back to Main Menu",
         "Speak to an Agent"
@@ -1093,6 +1282,8 @@
       "keywords": [
         "landline",
         "landlines",
+        "landline plan",
+        "landline plans",
         "landlines home or business",
         "home or business landline",
         "need a landline",
@@ -1101,13 +1292,17 @@
         "landline service",
         "voip service"
       ],
-      "response": "📞 Landline Services\n\nWe offer both home and business landline solutions with crystal-clear call quality and advanced features.\n\nIs this for a home or a business setup?",
+      "response": "📞 Landline Services\n\nWe offer both home and business landline solutions with crystal-clear call quality and advanced features.\n\n🏠 Home Landline: https://zoikotelecom.com/landlines/\n🏢 Business Landline: https://zoikotelecom.com/landline-business/\n\nIs this for a home or a business setup?",
       "suggestions": ["Home Landline", "Business Landline", "Speak to an Agent"]
     },
     {
       "id": "landline_business",
       "keywords": [
         "business landline",
+        "business landline plan",
+        "business landline plans",
+        "landline business plan",
+        "landline business plans",
         "business plans",
         "business phone plans",
         "company plans",
@@ -1131,6 +1326,11 @@
       "id": "landline_home",
       "keywords": [
         "home landline",
+        "personal landline",
+        "personal landline plan",
+        "personal landline plans",
+        "home landline plan",
+        "home landline plans",
         "home phone",
         "residential landline",
         "home voip",
@@ -1139,6 +1339,19 @@
       "response": "🏠 Home Landline Service\n\nA professional, reliable landline for your home — much cheaper than traditional lines.\n\n✅ Professional home office setup\n✅ Crystal-clear call quality\n✅ Cost-effective vs traditional landlines\n✅ Advanced features like call forwarding\n✅ Flexible plans\n\n🔗 https://zoikotelecom.com/landlines/",
       "url": "https://zoikotelecom.com/landlines/",
       "suggestions": ["Speak to an Agent"]
+    },
+    {
+      "id": "plan_smartvoice_landline",
+      "keywords": [
+        "zoiko smartvoice",
+        "smartvoice",
+        "smart voice",
+        "cheapest business landline",
+        "cheap business landline"
+      ],
+      "response": "📞 Zoiko SmartVoice\n\nThis is the lowest-priced business landline option currently shown on Zoiko's landline page.\n\n💷 From £8.99/mo\n\nBest for: Small business setups that want a simple, affordable landline service with professional call features.\n\n🔗 https://zoikotelecom.com/landlines/",
+      "url": "https://zoikotelecom.com/landlines/",
+      "suggestions": ["Business Landline", "Home Landline", "Back to Main Menu"]
     },
     {
       "id": "business_solutions",
@@ -1156,11 +1369,7 @@
       "conflict_note": "Does NOT trigger for simple 'business' alone — requires compound keyword",
       "response": "🌐 Business Solutions\n\nWe deliver tailored connectivity solutions for businesses of all sizes:\n\n🔗 Dedicated internet access\n☁️ Cloud hosting & managed services\n🏗️ Enterprise infrastructure\n📡 IoT/M2M connectivity solutions\n📱 Mobile fleet management (EE network)\n\nPowered by BT Wholesale and EE networks.\n\n🔗 https://zoikotelecom.com/business-solutions/\n\nSubmit your details via our contact form and we'll create a customised solution for your business.",
       "url": "https://zoikotelecom.com/business-solutions/",
-      "suggestions": [
-        "IoT SIM details",
-        "Reseller Programme",
-        "Speak to an Agent"
-      ]
+      "suggestions": ["Reseller Programme", "Speak to an Agent"]
     },
     {
       "id": "iot_sims",
@@ -1177,11 +1386,7 @@
       ],
       "response": "📡 IoT / M2M SIM Cards\n\nData-only SIMs designed for connected devices — GPS trackers, security cameras, smart meters, and more.\n\n✅ Global M2M connectivity\n✅ Up to 20% savings on IoT SIMs\n✅ Flexible data options\n✅ Reliable EE & BT network backbone\n\n🔗 https://zoikotelecom.com/business-solutions/\n\nTell us what devices you're looking to connect and we'll recommend the right solution!",
       "url": "https://zoikotelecom.com/business-solutions/",
-      "suggestions": [
-        "Request IoT consultation",
-        "Back to Business Solutions",
-        "Speak to an Agent"
-      ]
+      "suggestions": ["Back to Business Solutions", "Speak to an Agent"]
     },
     {
       "id": "reseller",
@@ -1250,7 +1455,6 @@
       "suggestions": [
         "Broadband problem",
         "Billing question",
-        "Order status",
         "Change my plan",
         "Speak to an Agent"
       ]
@@ -1271,7 +1475,11 @@
         "broadband down"
       ],
       "response": "I understand how frustrating tech problems can be. Let me get you to the right team quickly.\n\nFor the fastest help:\n\n📞 Call us: +44 207 164 6399\n   Mon–Sat 8:30am–8:30pm | Sun 10am–6pm\n\n💬 Live Chat: Instant responses during business hours\n   (After hours, Zakko is available 24/7)\n\n📧 Email: info@zoikotelecom.com\n\n📱 WhatsApp: +44 7421 115 994\n\nCan you briefly describe what's happening? I'll make sure I point you to the right team.",
-      "suggestions": ["Start live chat"]
+      "suggestions": [
+        "Payment methods",
+        "When will I be billed",
+        "Speak to Agent"
+      ]
     },
     {
       "id": "billing_question",
@@ -1474,12 +1682,7 @@
         "when do you charge"
       ],
       "response": "📅 Billing Cycles\n\n• Monthly contracts: Billed on the same date each month.\n• 30-day rolling: Billed every 30 days from activation.\n\nFor account-specific billing questions:\n📞 +44 207 164 6399",
-      "suggestions": [
-        "Payment methods",
-        "How to cancel",
-        "Speak to Agent",
-        "Back to Main Menu"
-      ]
+      "suggestions": ["Payment methods", "How to cancel", "Back to Main Menu"]
     },
     {
       "id": "faq_cancel",
@@ -1505,7 +1708,7 @@
         "when will broadband be installed"
       ],
       "response": "🔧 Broadband Installation\n\nInstallation typically takes 1–2 weeks from order confirmation. Some properties can be activated remotely within days.\n\nFor a specific installation timeframe at your address:\n📞 +44 207 164 6399\n💬 Live Chat on our website",
-      "suggestions": ["Order broadband"]
+      "suggestions": []
     },
     {
       "id": "faq_upgrade_broadband",
@@ -1532,11 +1735,7 @@
         "keep my number"
       ],
       "response": "📲 Keeping Your Existing Number\n\nYes! Number porting is completely free and straightforward.\n\nYou'll need your PAC (Porting Authorisation Code) from your current provider. You can request your PAC by texting PAC to 65075 on your current network.\n\nOnce you have it, share it with us and we'll handle the rest!",
-      "suggestions": [
-        "View mobile plans",
-        "Speak to Agent",
-        "Back to Mobile Plans"
-      ]
+      "suggestions": ["View mobile plans", "Speak to Agent"]
     },
     {
       "id": "faq_unlimited_data",
@@ -1549,11 +1748,7 @@
       ],
       "response": "✅ Unlimited Data Options\n\nYes! We offer:\n\n📦 Z-Unlimited — Truly unlimited mobile data\n   From £29.00/mo (24-month)\n\n📦 ZB-Unlimited — Unlimited mobile broadband\n   From £15.00/mo (24-month)\n\nBoth run on the EE network with 5G speeds.\n\n🔗 https://zoikotelecom.com/ee-mobile-plans/",
       "url": "https://zoikotelecom.com/ee-mobile-plans/",
-      "suggestions": [
-        "Z-Unlimited plan details",
-        "ZB-Unlimited details",
-        "Back to Mobile Plans"
-      ]
+      "suggestions": ["Z-Unlimited plan details", "ZB-Unlimited details"]
     },
     {
       "id": "faq_place_order",
@@ -1566,11 +1761,7 @@
         "how to get started"
       ],
       "response": "🛒 How to Place an Order\n\nOrdering is simple:\n\n1️⃣ Browse our services (mobile, broadband, business solutions)\n2️⃣ Choose the plan that suits you\n3️⃣ Complete the online order form\n4️⃣ Receive confirmation by email within minutes\n\nNeed help choosing?\n📞 +44 207 164 6399\n💬 Live Chat on our website\n📱 WhatsApp: +44 7421 115 994",
-      "suggestions": [
-        "View mobile Plans",
-        "Speak to Agent",
-        "Back to Main Menu"
-      ]
+      "suggestions": ["View mobile Plans", "Back to Main Menu"]
     },
     {
       "id": "faq_warranty",
@@ -1604,12 +1795,7 @@
       "conflict_note": "Triggers on escalation. After agent connected, bot stops responding.",
       "response": "👤 Speaking to Our Team\n\nOf course! Our team is ready to help you.\n\n📞 Call us: +44 207 164 6399\n   Mon–Sat 8:30am–8:30pm | Sun 10am–6pm\n\n💬 Live Chat: Visit our website for instant chat during business hours\n\n📧 Email: info@zoikotelecom.com\n\n📱 WhatsApp: +44 7421 115 994\n\n🔗 Contact form: https://zoikotelecom.com/contact/\n\nZakko (our AI assistant) is available 24/7 outside business hours!",
       "url": "https://zoikotelecom.com/contact/",
-      "suggestions": [
-        "Call +44 207 164 6399",
-        "Email us",
-        "WhatsApp us",
-        "Back to Main Menu"
-      ]
+      "suggestions": []
     },
     {
       "id": "goodbye",

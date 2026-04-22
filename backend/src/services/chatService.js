@@ -44,13 +44,40 @@ const CTA_MAP = {
     url: withTrackedUrl("https://zoikotelecom.com/bt-broadband/"),
     type: "cta",
   },
+  "View Broadband Plans": {
+    label: "View Broadband Plans",
+    url: withTrackedUrl("https://zoikotelecom.com/bt-broadband/"),
+    type: "cta",
+  },
   Broadband: {
     label: "Broadband",
     url: withTrackedUrl("https://zoikotelecom.com/bt-broadband/"),
     type: "cta",
   },
+  "View Mobile Broadband": {
+    label: "View Mobile Broadband",
+    url: withTrackedUrl("https://zoikotelecom.com/bt-broadband/"),
+    type: "cta",
+  },
+  "View Day Pass Plans": {
+    label: "View Day Pass Plans",
+    url: withTrackedUrl(
+      "https://zoikotelecom.com/product-category/day-pass-roaming-plans/",
+    ),
+    type: "cta",
+  },
+  "View Voice & Text Plans": {
+    label: "View Voice & Text Plans",
+    url: withTrackedUrl("https://zoikotelecom.com/voice-and-text-plans/"),
+    type: "cta",
+  },
   "View Home Landlines": {
     label: "View Home Landlines",
+    url: withTrackedUrl("https://zoikotelecom.com/landlines/"),
+    type: "cta",
+  },
+  "View Landlines": {
+    label: "View Landlines",
     url: withTrackedUrl("https://zoikotelecom.com/landlines/"),
     type: "cta",
   },
@@ -95,7 +122,7 @@ const CTA_MAP = {
     type: "cta",
   },
   "Call support": {
-    label: "Call support",
+    label: "Call support",  
     url: withTrackedUrl("https://zoikotelecom.com/contact/"),
     type: "cta",
   },
@@ -263,7 +290,7 @@ function ensureSuggestions(intentId, suggestions = []) {
   }
 
   if (intentId === "agent") {
-    return ["Connect Me to an Agent", "Back to Main Menu"];
+    return ["Back to Main Menu"];
   }
 
   const next = [...suggestions];
@@ -296,17 +323,35 @@ function getIntentCtas(intentId) {
     case "esim_intro":
     case "esim_check":
     case "esim_explain":
-    case "mobile_broadband":
-    case "day_pass_roaming":
-    case "voice_text_plans":
     case "business_intro":
-    case "landline_intro":
     case "support_intro":
     case "something_else":
       return [CTA_MAP["View Plans Now"]];
     case "broadband_intro":
+    case "broadband_all_plans":
+    case "broadband_zippy_fibre":
+    case "broadband_turbo_fibre":
+    case "broadband_hyper_fibre":
+    case "broadband_quantum_fibre":
+    case "broadband_ultra_fibre":
+    case "broadband_rocket_fibre":
+    case "broadband_xplosion_fibre":
+    case "broadband_elite_fibre":
+    case "broadband_supersonic_fibre":
     case "broadband_help":
-      return [];
+      return [CTA_MAP["View Broadband Plans"]];
+    case "mobile_broadband":
+      return [CTA_MAP["View Mobile Broadband"]];
+    case "day_pass_roaming":
+    case "plan_world_traveller":
+    case "plan_pro_traveller":
+    case "plan_euro_explorer":
+      return [CTA_MAP["View Day Pass Plans"]];
+    case "voice_text_plans":
+    case "plan_chat_treat":
+    case "plan_talk_pro":
+    case "plan_talk_master":
+      return [CTA_MAP["View Voice & Text Plans"]];
     case "mobile_contract":
     case "website_search_mobile":
     case "faq_number_porting":
@@ -324,6 +369,13 @@ function getIntentCtas(intentId) {
       return [CTA_MAP["View Business Landline"]];
     case "landline_home":
       return [CTA_MAP["View Home Landlines"]];
+    case "plan_smartvoice_landline":
+      return [CTA_MAP["View Landlines"]];
+    case "landline_intro":
+      return [
+        CTA_MAP["View Home Landlines"],
+        CTA_MAP["View Business Landline"],
+      ];
     case "business_solutions":
     case "iot_sims":
     case "all_services":
@@ -346,6 +398,15 @@ function getIntentCtas(intentId) {
         CTA_MAP.Broadband,
         CTA_MAP["Landline Business"],
       ];
+    case "cheapest_plans_overview":
+      return [
+        CTA_MAP["View Voice & Text Plans"],
+        CTA_MAP["Mobile Plans"],
+        CTA_MAP["View Landlines"],
+        CTA_MAP["View Broadband Plans"],
+      ];
+    case "plans_under_10":
+      return [CTA_MAP["Mobile Plans"]];
     case "agent":
       return [CTA_MAP["Connect Me to an Agent"]];
     default:
@@ -788,6 +849,8 @@ function buildChatResponse(message, knowledge, sessionId) {
     "what's the difference between a sim and an esim": "esim_explain",
     "view plans now": "mobile_contract",
     "check broadband packages": "broadband_intro",
+    "view day pass plans": "day_pass_roaming",
+    "back to broadband": "broadband_intro",
     "view business solutions": "business_solutions",
     "view business landline": "landline_business",
     "view home landlines": "landline_home",
@@ -798,6 +861,11 @@ function buildChatResponse(message, knowledge, sessionId) {
     "open contact page": "support_technical",
     "call support": "support_technical",
     "mobile plans": "mobile_intro",
+    "good mobile plan": "mobile_broadband",
+    "good mobile plans": "mobile_broadband",
+    "good mobile pans": "mobile_broadband",
+    "best mobile plan": "mobile_broadband",
+    "best mobile plans": "mobile_broadband",
     broadband: "broadband_intro",
     "landline business": "landline_business",
     "business plans": "landline_business",
