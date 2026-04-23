@@ -68,7 +68,7 @@ const CTA_MAP = {
   },
   "View Voice & Text Plans": {
     label: "View Voice & Text Plans",
-    url: withTrackedUrl("https://zoikotelecom.com/voice-and-text-plans/"),
+    url: withTrackedUrl("https://zoikotelecom.com/product-category/voice-and-text-plans/"),
     type: "cta",
   },
   "Talk Master": {

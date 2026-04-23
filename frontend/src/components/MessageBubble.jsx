@@ -58,43 +58,56 @@ export function MessageBubble({ message }) {
 
           {/* CTA links */}
           {message.ctas?.length ? (
-            <div className="mt-3 grid gap-2 sm:mt-3.5">
-              {message.ctas.map((cta) => (
-                <a
-                  key={`${message.id}-${cta.label}`}
-                  href={cta.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={() => {
-                    trackChatEvent("cta_click", {
-                      source: "message_cta",
-                      label: cta.label,
-                      url: cta.url,
-                    });
-                    trackChatEvent("url_redirect", {
-                      source: "message_cta",
-                      label: cta.label,
-                      url: cta.url,
-                    });
-                  }}
-                  className="group flex items-start justify-between gap-3 rounded-2xl border border-accent/25 bg-accent/8 px-1 py-1 text-left transition hover:border-accent hover:bg-accent/12 sm:px-4 sm:py-3"
-                >
-                  <div className="min-w-0">
-                    <div className="text-sm font-semibold text-ink">
-                      <span className="mr-2 text-base">{POINT_RIGHT}</span>
-                      <span className="rounded-full bg-accent/12 px-2 py-0.5 text-accent">
+            <div className="mt-3 flex flex-col gap-2 sm:mt-3.5">
+              {message.ctas.map((cta) => {
+                let displayUrl = cta.url;
+                try {
+                  const u = new URL(cta.url);
+                  displayUrl = u.hostname.replace(/^www\./, "");
+                } catch {}
+
+                return (
+                  <a
+                    key={`${message.id}-${cta.label}`}
+                    href={cta.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => {
+                      trackChatEvent("cta_click", {
+                        source: "message_cta",
+                        label: cta.label,
+                        url: cta.url,
+                      });
+                      trackChatEvent("url_redirect", {
+                        source: "message_cta",
+                        label: cta.label,
+                        url: cta.url,
+                      });
+                    }}
+                    className="group flex items-center gap-3 rounded-xl border border-accent/30 bg-accent/10 px-3.5 py-2.5 transition hover:border-accent/60 hover:bg-accent/18 active:scale-[0.98]"
+                  >
+                    {/* Green icon badge */}
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent/20 text-base text-accent">
+                      {POINT_RIGHT}
+                    </span>
+
+                    {/* Label + domain */}
+                    <div className="min-w-0 flex-1">
+                      <div className="text-sm font-semibold text-accent leading-tight">
                         {cta.label}
-                      </span>
+                      </div>
+                      <div className="text-[11px] text-accent/60 mt-0.5 font-medium tracking-wide">
+                        {displayUrl}
+                      </div>
                     </div>
-                    <div className="mt-1 break-all text-[11px] text-muted">
-                      {cta.url}
-                    </div>
-                  </div>
-                  <span className="shrink-0 text-lg text-accent transition group-hover:translate-x-1">
-                    {ARROW_RIGHT}
-                  </span>
-                </a>
-              ))}
+
+                    {/* Arrow */}
+                    <span className="shrink-0 text-accent/50 transition-transform group-hover:translate-x-0.5 group-hover:text-accent text-base">
+                      {ARROW_RIGHT}
+                    </span>
+                  </a>
+                );
+              })}
             </div>
           ) : null}
         </div>
@@ -104,8 +117,8 @@ export function MessageBubble({ message }) {
           <div
             className={`w-full grid gap-1.5 sm:gap-2 ${
               cols === 3
-                ? "grid-cols-3 sm:grid-cols-4" // short labels: 3 col mobile → 4 col sm+
-                : "grid-cols-2 sm:grid-cols-3" // long labels:  2 col mobile → 3 col sm+
+                ? "grid-cols-3 sm:grid-cols-4"
+                : "grid-cols-2 sm:grid-cols-3"
             }`}
           >
             {message.suggestions.map((suggestion) => (
