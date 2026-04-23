@@ -568,7 +568,7 @@
         "cheapest broadband plan",
         "cheapest landline plan"
       ],
-      "response": "Final Summary — Cheapest in Each Category\n\nCategory | Cheapest Plan | Price/mo\nVoice & Text (SIM) | Talk Master | £5.50\nMobile Data Bundles | Z-Essentials | £9.50\nBusiness Landline | Zoiko SmartVoice | £8.99\nBroadband | Zippy Fibre | £29.95\nOverall Cheapest Plan | Talk Master (Voice & Text) | £5.50\n\nQuick links:\n• Talk Master: https://zoikotelecom.com/voice-and-text-plans/\n• Z-Essentials: https://zoikotelecom.com/product/z-essentials/\n• Zoiko SmartVoice: https://zoikotelecom.com/landlines/\n• Zippy Fibre: https://zoikotelecom.com/bt-broadband/\n\nIf you want the absolute cheapest overall, Talk Master at £5.50 is the lowest-cost option. If you want the cheapest monthly mobile bundle, go for Z-Essentials at £9.50/mo.",
+      "response": "Final Summary — Cheapest in Each Category\n\nCategory | Cheapest Plan | Price/mo\nVoice & Text (SIM) | Talk Master | £5.50\nMobile Data Bundles | Z-Essentials | £9.50\nBusiness Landline | Zoiko SmartVoice | £8.99\nBroadband | Zippy Fibre | £29.95\nOverall Cheapest Plan | Talk Master (Voice & Text) | £5.50\n\nQuick links:\n• Talk Master: https://zoikotelecom.com/product/talk-master/\n• Z-Essentials: https://zoikotelecom.com/product/z-essentials/\n• Zoiko SmartVoice: https://zoikotelecom.com/product/zoiko-smartvoice/\n• Zippy Fibre: https://zoikotelecom.com/product/zippy-fibre/\n\nIf you want the absolute cheapest overall, Talk Master at £5.50 is the lowest-cost option. If you want the cheapest monthly mobile bundle, go for Z-Essentials at £9.50/mo.",
       "suggestions": [
         "Talk Master",
         "Z-Essentials",
@@ -781,6 +781,9 @@
         "roaming plan",
         "day pass roaming",
         "travel plan",
+        "travel plans",
+        "traveler plans",
+        "traveler plan",
         "roaming day pass",
         "international day pass",
         "short trip data",
@@ -818,7 +821,7 @@
         "voice plan with roaming",
         "travel voice plan"
       ],
-      "response": "📱 Talk Pro\n\nA one-off voice and text plan with roaming included.\n\n📦 Includes:\n   • 100MB data + 100MB roaming data\n   • 1000 minutes\n   • 1000 texts\n   • £6.50 one-time charge\n\nBest for: Callers who also travel occasionally and want a low-cost option.\n\n🔗 https://zoikotelecom.com/voice-and-text-plans/",
+      "response": "📱 Talk Pro\n\nA one-off voice and text plan with roaming included.\n\n📦 Includes:\n   • 100MB data + 100MB roaming data\n   • 1000 minutes\n   • 1000 texts\n   • £6.50 one-time charge\n\nBest for: Callers who also travel occasionally and want a low-cost option.\n\n🔗 https://zoikotelecom.com/product/talk-pro/",
       "url": "https://zoikotelecom.com/voice-and-text-plans/",
       "suggestions": ["Talk Master", "Chat Treat", "Back to Main Menu"]
     },
@@ -830,7 +833,7 @@
         "best voice text plan",
         "affordable voice text plan"
       ],
-      "response": "🏆 Talk Master\n\nOur most affordable one-off voice and text plan with roaming included.\n\n📦 Includes:\n   • 100MB data + 100MB roaming data\n   • 1000 minutes\n   • 1000 texts\n   • £5.50 one-time charge\n\nBest for: Budget-conscious users who mainly need calls and texts.\n\n🔗 https://zoikotelecom.com/voice-and-text-plans/",
+      "response": "🏆 Talk Master\n\nOur most affordable one-off voice and text plan with roaming included.\n\n📦 Includes:\n   • 100MB data + 100MB roaming data\n   • 1000 minutes\n   • 1000 texts\n   • £5.50 one-time charge\n\nBest for: Budget-conscious users who mainly need calls and texts.\n\n🔗 https://zoikotelecom.com/product/talk-master",
       "url": "https://zoikotelecom.com/voice-and-text-plans/",
       "suggestions": ["Talk Pro", "Chat Treat", "Back to Main Menu"]
     },

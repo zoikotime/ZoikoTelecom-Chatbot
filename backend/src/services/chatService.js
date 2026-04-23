@@ -71,6 +71,11 @@ const CTA_MAP = {
     url: withTrackedUrl("https://zoikotelecom.com/voice-and-text-plans/"),
     type: "cta",
   },
+  "Talk Master": {
+    label: "Talk Master",
+    url: withTrackedUrl("https://zoikotelecom.com/product/talk-master/"),
+    type: "cta",
+  },
   "View Home Landlines": {
     label: "View Home Landlines",
     url: withTrackedUrl("https://zoikotelecom.com/landlines/"),
@@ -122,7 +127,7 @@ const CTA_MAP = {
     type: "cta",
   },
   "Call support": {
-    label: "Call support",  
+    label: "Call support",
     url: withTrackedUrl("https://zoikotelecom.com/contact/"),
     type: "cta",
   },
@@ -323,7 +328,7 @@ function getIntentCtas(intentId) {
     case "esim_intro":
     case "esim_check":
     case "esim_explain":
-    case "business_intro":
+
     case "support_intro":
     case "something_else":
       return [CTA_MAP["View Plans Now"]];
@@ -350,8 +355,9 @@ function getIntentCtas(intentId) {
     case "voice_text_plans":
     case "plan_chat_treat":
     case "plan_talk_pro":
-    case "plan_talk_master":
       return [CTA_MAP["View Voice & Text Plans"]];
+    case "plan_talk_master":
+      return [CTA_MAP["Talk Master"]];
     case "mobile_contract":
     case "website_search_mobile":
     case "faq_number_porting":
@@ -398,6 +404,8 @@ function getIntentCtas(intentId) {
         CTA_MAP.Broadband,
         CTA_MAP["Landline Business"],
       ];
+    case "business_intro":
+      return [CTA_MAP["Landline Business"]];
     case "cheapest_plans_overview":
       return [
         CTA_MAP["View Voice & Text Plans"],
